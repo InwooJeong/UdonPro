@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.11803444782168186" />
-        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/drawable/edittext_shadow.xml" value="0.18333333333333332" />
+        <entry key="app/src/main/res/drawable/ic_heart_black_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_heart_red_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_info_sand_24dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_location_on_red_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_report_red_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_thumb_down_black_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/drawable/ic_thumb_up_black_12dp.xml" value="0.321025641025641" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.246961451038241" />
+        <entry key="app/src/main/res/layout/loginform.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/registerform.xml" value="0.335" />
       </map>
     </option>
   </component>
