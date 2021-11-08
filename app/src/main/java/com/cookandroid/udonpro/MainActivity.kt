@@ -11,16 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val writeBtn = findViewById<Button>(R.id.writeBtn)
-
-        writeBtn.setOnClickListener {
-            val database = Firebase.database
-
-            val myRef = database.getReference("message")
-
-            myRef.setValue("Hello, World!")
+//        val writeBtn = findViewById<Button>(R.id.writeBtn)
+//
+//        writeBtn.setOnClickListener {
+//            val database = Firebase.database
+//
+//            val myRef = database.getReference("message")
+//
+//            myRef.setValue("Hello, World!")
         }
     }
 
     // hihihihihih1122ggggg
-}
