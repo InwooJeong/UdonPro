@@ -9,7 +9,19 @@
         android:id="@+id/writeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_done_black_24dp"
         android:text="시작"
+        android:drawableBottom="@drawable/ic_favorite_border_black_24dp"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/icSizeTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_search_12dp"
+        android:text="Icon Size Test"
+        android:drawableBottom="@drawable/ic_favorite_border_black_24dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         tools:ignore="MissingConstraints" />
 
