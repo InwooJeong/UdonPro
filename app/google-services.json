@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "487640551000",
-    "project_id": "udonpro-509d6",
-    "storage_bucket": "udonpro-509d6.appspot.com"
+    "project_number": "310218864004",
+    "project_id": "androidproject-67c14",
+    "storage_bucket": "androidproject-67c14.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:487640551000:android:957d6fb78d47fb5133042d",
+        "mobilesdk_app_id": "1:310218864004:android:8e08d84e851531ab1619d1",
         "android_client_info": {
           "package_name": "com.cookandroid.udonpro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "487640551000-tu34kgh4tua16636j1lcokoaec4t51a9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.cookandroid.udonpro",
-            "certificate_hash": "d136f638ce3332a7a9eff3ee9587762d1bd9356a"
-          }
-        },
-        {
-          "client_id": "487640551000-pi61fsrv0g0ffcl85mjc9gj3tskgri3o.apps.googleusercontent.com",
+          "client_id": "310218864004-oeubf4gfvuaoqr7kgsrkoi5p2re4v68l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAG_5F5qaWk_Fejh5ICyGCQiRmYa0xFOqk"
+          "current_key": "AIzaSyBJ7bnqpPdSHhvnDX0cn3Ob4DCj4x8jF_M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "487640551000-pi61fsrv0g0ffcl85mjc9gj3tskgri3o.apps.googleusercontent.com",
+              "client_id": "310218864004-oeubf4gfvuaoqr7kgsrkoi5p2re4v68l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
