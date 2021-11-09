@@ -35,6 +35,9 @@ android {
     buildFeatures{
         dataBinding = true
     }
+    viewBinding{
+        enabled = true
+    }
 
 }
 
@@ -48,7 +51,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
-    implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     testImplementation 'junit:junit:4.+'
