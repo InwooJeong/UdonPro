@@ -9,17 +9,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val writeBtn = findViewById<Button>(R.id.writeBtn)
-
-        writeBtn.setOnClickListener {
-            val database = Firebase.database
-            val myRef = database.getReference("message")
-
-            myRef.setValue("Hello, World!")
-        }
+        setContentView(R.layout.registerbook)
     }
-
     // hihihihihih1122ggggg
 }

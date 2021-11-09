@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.11803444782168186" />
-        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/font/font.xml" value="0.16574074074074074" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/drawable/dropshadow.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/drawable/shadow.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/mainform.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/registerbook.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/shadow.xml" value="0.1296875" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
       </map>
     </option>
