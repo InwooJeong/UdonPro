@@ -1,16 +1,11 @@
 package com.cookandroid.udonpro
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.member_list.*
-import kotlinx.android.synthetic.main.mlist_item.*
 
-class MainActivity : AppCompatActivity() {
+class MemberList : AppCompatActivity() {
     lateinit var mAdapter : MemberListAdapter
     val datas = mutableListOf<MemberListItem>()
 

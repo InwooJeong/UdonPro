@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <ImageView
@@ -11,7 +11,7 @@
         android:background="#d5c467"
         android:layout_weight="1"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_user_24dp"/>
+        android:src="@drawable/ic_home_24dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mlist_btn"
+        android:id="@+id/btnInfo"
         android:src="@drawable/ic_info_sand_24dp"
         android:background="#d5c467"
         android:gravity="center"
