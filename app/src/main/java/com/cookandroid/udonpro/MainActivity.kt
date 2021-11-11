@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.loginform)
 
 //        val writeBtn = findViewById<Button>(R.id.writeBtn)
 //
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 //            val myRef = database.getReference("message")
 //
 //            myRef.setValue("Hello, World!")
-        }
     }
+}
 
-    // hihihihihih1122ggggg
+// hihihihihih1122ggggg
