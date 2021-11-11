@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/light_theme_1_headline_h_3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"

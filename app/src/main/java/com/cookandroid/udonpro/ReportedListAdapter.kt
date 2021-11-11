@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.reported_list.*
+import kotlinx.android.synthetic.main.rlist_item.*
 
 class ReportedListAdapter(private val context: Context):
     RecyclerView.Adapter<ReportedListAdapter.ViewHolder>(){
@@ -34,11 +36,13 @@ class ReportedListAdapter(private val context: Context):
         private val rlist_bpic: ImageView = itemView.findViewById(R.id.rlist_bpic)
         private val btnDel: Button = itemView.findViewById(R.id.btnDel)
 
+
         /*init{
             btnDel.setOnClickListener{
 
             }
         }*/
+
 
         fun bind(item: ReportedListItem){
             rlist_btitle.text = item.bookname
