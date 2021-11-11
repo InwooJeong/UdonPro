@@ -16,14 +16,13 @@ import android.widget.Toast
 import com.cookandroid.udonpro.register
 
 class loginform : AppCompatActivity() {
-    private var mFirebaseAuth //파이어베이스 인증처리
-            : FirebaseAuth? = null
-    private var mDatabaseRef // 실시간 데이터베이스
-            : DatabaseReference? = null
-    private var mEtEmail: EditText? = null
-    private var mEtPw: EditText? = null
-    private val mEtNumber //로그인 입력필
-            : EditText? = null
+    lateinit var mFirebaseAuth //파이어베이스 인증처리
+            : FirebaseAuth
+    lateinit var mDatabaseRef // 실시간 데이터베이스
+            : DatabaseReference
+    lateinit var mEtEmail: EditText
+    lateinit var mEtPw: EditText
+    //lateinit val mEtNumber : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //

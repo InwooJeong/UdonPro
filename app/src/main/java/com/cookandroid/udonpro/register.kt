@@ -16,31 +16,32 @@ import com.cookandroid.udonpro.UserAccount
 import android.widget.Toast
 
 class register : AppCompatActivity() {
-    private var mFirebaseAuth //파이어베이스 인증처리
-            : FirebaseAuth? = null
-    private var mDatabaseRef // 실시간 데이터베이스
-            : DatabaseReference? = null
-    private var mEtEmail: EditText? = null
-    private var mEtPw: EditText? = null
-    private var mEtNumber //회원가입 입력 필드 , (주소 나중에처리할것)
-            : EditText? = null
-    private var mBtnRegister: Button? = null
-    private var mBtnMain //회원가입 입력버튼
-            : Button? = null
+    lateinit var mFirebaseAuth //파이어베이스 인증처리
+            : FirebaseAuth
+    lateinit var mDatabaseRef // 실시간 데이터베이스
+            : DatabaseReference
+    lateinit var mEtEmail: EditText
+    lateinit var mEtPw: EditText
+    lateinit var mEtNumber //회원가입 입력 필드 , (주소 나중에처리할것)
+            : EditText
+    lateinit var mBtnRegister: Button
+    lateinit var mBtnMain //회원가입 입력버튼
+            : Button
 
     //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registerform)
 
-        //초기회
+
         mFirebaseAuth = FirebaseAuth.getInstance()
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("UdonProject")
         mEtEmail = findViewById(R.id.et_email)
         mEtPw = findViewById(R.id.et_pw)
         mEtNumber = findViewById(R.id.et_num)
-        mBtnRegister = findViewById(R.id.btn_register)
+        mBtnRegister = findViewById<Button>(R.id.btn_register)
         mBtnMain = findViewById(R.id.btn_main)
+
         mBtnRegister.setOnClickListener(View.OnClickListener {
             //회원가입 처리 시작
             val strEmail = mEtEmail.getText().toString() //값을 가저와서, 문자열로 변환
@@ -68,5 +69,6 @@ class register : AppCompatActivity() {
                     }
                 }
         })
+
     }
 }
