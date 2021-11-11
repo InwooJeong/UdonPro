@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.cookandroid.udonpro.databinding.MlistItemBinding
+//import com.bumptech.glide.Glide
+//import com.cookandroid.udonpro.databinding.MlistItemBinding
 import kotlinx.android.synthetic.main.member_list.*
 import kotlinx.android.synthetic.main.mlist_item.*
 
@@ -45,7 +45,7 @@ class MemberListAdapter(private val context: Context): RecyclerView.Adapter<Memb
 
         fun bind(item: MemberListItem){
             mlist_memberid.text = item.username
-            Glide.with(itemView).load(item.profile).into(mlist_profile)
+            //Glide.with(itemView).load(item.profile).into(mlist_profile)
 
         }
     }
