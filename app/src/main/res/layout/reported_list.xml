@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:listitem="@layout/mlist_item"
-        android:id="@+id/memberListView"/>
+        tools:listitem="@layout/rlist_item"
+        android:id="@+id/reportedListView"/>
 
     <LinearLayout
         android:layout_width="match_parent"
