@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.loginform)
+        setContentView(R.layout.registerform)
 
 //        val writeBtn = findViewById<Button>(R.id.writeBtn)
 //
