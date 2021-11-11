@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.cookandroid.udonpro.databinding.MlistItemBinding
 import kotlinx.android.synthetic.main.member_list.*
 import kotlinx.android.synthetic.main.mlist_item.*
 

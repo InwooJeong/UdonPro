@@ -9,9 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.cookandroid.udonpro.databinding.RlistItemBinding
-import kotlinx.android.synthetic.main.reported_list.*
-import kotlinx.android.synthetic.main.rlist_item.*
 
 class ReportedListAdapter(private val context: Context):
     RecyclerView.Adapter<ReportedListAdapter.ViewHolder>(){

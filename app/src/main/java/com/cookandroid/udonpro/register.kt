@@ -16,19 +16,16 @@ import com.cookandroid.udonpro.UserAccount
 import android.widget.Toast
 
 class register : AppCompatActivity() {
-    lateinit var mFirebaseAuth //파이어베이스 인증처리
-            : FirebaseAuth
-    lateinit var mDatabaseRef // 실시간 데이터베이스
-            : DatabaseReference
+    lateinit var mFirebaseAuth : FirebaseAuth //파이어베이스 인증처리
+    lateinit var mDatabaseRef : DatabaseReference// 실시간 데이터베이스
+
     lateinit var mEtEmail: EditText
     lateinit var mEtPw: EditText
-    lateinit var mEtNumber //회원가입 입력 필드 , (주소 나중에처리할것)
-            : EditText
+    lateinit var mEtNumber : EditText //회원가입 입력 필드 , (주소 나중에처리할것)
     lateinit var mBtnRegister: Button
-    lateinit var mBtnMain //회원가입 입력버튼
-            : Button
+    lateinit var mBtnMain : Button //회원가입 입력버튼
 
-    //
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registerform)
