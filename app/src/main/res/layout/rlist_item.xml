@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rlist_bpic"
+        android:background="#d5c467"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_home_24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rlist_btitle"
+        android:text="꿈나무"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:background="#d5c467"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="24dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/btnDel"
+        android:background="#d5c467"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:text="삭제"
+        android:textColor="#ff0000"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

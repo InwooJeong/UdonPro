@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 //            val myRef = database.getReference("message")
 //
 //            myRef.setValue("Hello, World!")
-        }
     }
+}
 
-    // hihihihihih1122ggggg
+// hihihihihih1122ggggg

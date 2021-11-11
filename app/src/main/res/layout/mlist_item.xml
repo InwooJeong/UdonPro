@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mlist_profile"
+        android:background="#d5c467"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_home_24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mlist_memberid"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:text="user"
+        android:background="#d5c467"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="24dp"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/btnInfo"
+        android:src="@drawable/ic_info_sand_24dp"
+        android:background="#d5c467"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+</LinearLayout>
