@@ -33,18 +33,6 @@ class MainActivity : AppCompatActivity(){
         recyclerView.adapter = rAdapter
         observerData()
 
-        var swipe = findViewById<SwipeRefreshLayout>(R.id.swipeRefreshLayout)
-
-        swipe.setOnRefreshListener {
-            rAdapter = ReportedListAdapter(this)
-
-            val recyclerView: RecyclerView = findViewById(R.id.reportedListView)
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = rAdapter
-            observerData()
-
-            swipe.isRefreshing = false
-        }
     }
 
     fun observerData(){

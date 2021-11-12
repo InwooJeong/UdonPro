@@ -31,19 +31,6 @@ class MemberList : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = mAdapter
         observerData()
-
-        var swipe = findViewById<SwipeRefreshLayout>(R.id.swipeRefreshLayout)
-
-        swipe.setOnRefreshListener {
-            mAdapter = MemberListAdapter(this)
-
-            val recyclerView : RecyclerView = findViewById(R.id.memberListView)
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = mAdapter
-            observerData()
-
-            swipe.isRefreshing = false
-        }
     }
 
     fun observerData(){

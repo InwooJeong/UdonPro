@@ -16,6 +16,8 @@ class MemberRepo {
         myRef.addValueEventListener(object : ValueEventListener{
             val listData : MutableList<MemberListItem> = mutableListOf<MemberListItem>()
             override fun onDataChange(snapshot: DataSnapshot) {
+                listData.clear()
+
                 if(snapshot.exists()){
                     for(memberSnapshot in snapshot.children){
                         val getData = memberSnapshot.getValue(MemberListItem::class.java)
