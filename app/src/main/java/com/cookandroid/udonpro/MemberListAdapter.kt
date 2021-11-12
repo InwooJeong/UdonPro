@@ -13,23 +13,28 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.member_list.*
 import kotlinx.android.synthetic.main.mlist_item.*
 
-class MemberListAdapter(private val context: Context): RecyclerView.Adapter<MemberListAdapter.ViewHolder>(){
+class MemberListAdapter(private val context: Context):
+    RecyclerView.Adapter<MemberListAdapter.ViewHolder>(){
 
-    var datas = mutableListOf<MemberListItem>()
+    var memberList = mutableListOf<MemberListItem>()
+
+    fun setListData(data:MutableList<MemberListItem>){
+        memberList = data
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewHolder {
+    ): MemberListAdapter.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.mlist_item, parent,false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MemberListAdapter.ViewHolder, position: Int) {
-        holder.bind(datas[position])
+        holder.bind(memberList[position])
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = memberList.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val mlist_memberid: TextView = itemView.findViewById(R.id.mlist_memberid)
@@ -43,7 +48,7 @@ class MemberListAdapter(private val context: Context): RecyclerView.Adapter<Memb
         }
 
         fun bind(item: MemberListItem){
-            mlist_memberid.text = item.username
+            mlist_memberid.text = item.id
             Glide.with(itemView).load(item.profile).into(mlist_profile)
 
         }

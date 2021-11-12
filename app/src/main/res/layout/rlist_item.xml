@@ -22,7 +22,7 @@
         android:background="#d5c467"
         android:layout_weight="1"
         android:gravity="center"
-        android:textSize="24dp"/>
+        android:autoSizeTextType="uniform"/>
 
     <Button
         android:layout_width="match_parent"

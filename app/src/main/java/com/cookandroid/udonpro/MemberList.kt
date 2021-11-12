@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -15,32 +18,25 @@ import kotlinx.android.synthetic.main.mlist_item.*
 
 class MemberList : AppCompatActivity() {
     lateinit var mAdapter : MemberListAdapter
-    val datas = mutableListOf<MemberListItem>()
-    lateinit var database : DatabaseReference
-    lateinit var auth : FirebaseAuth
+    val viewModel by lazy { ViewModelProvider(this).get(MemberViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.member_list)
 
-        auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().getReference().child("")
+        mAdapter = MemberListAdapter(this)
 
-        initRecycler()
+        val recyclerView : RecyclerView = findViewById(R.id.memberListView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = mAdapter
+        observerData()
+
     }
 
-    private fun initRecycler(){
-        mAdapter = MemberListAdapter(this)
-        memberListView.adapter = mAdapter
-
-        datas.apply{
-            add(MemberListItem(profile = R.drawable.ic_user_24dp, username = "user1"))
-            add(MemberListItem(profile = R.drawable.ic_user_24dp, username = "user2"))
-            add(MemberListItem(profile = R.drawable.ic_user_24dp, username = "user3"))
-            add(MemberListItem(profile = R.drawable.ic_user_24dp, username = "user4"))
-
-            mAdapter.datas = datas
+    fun observerData(){
+        viewModel.fetchData().observe(this, Observer {
+            mAdapter.setListData(it)
             mAdapter.notifyDataSetChanged()
-        }
+        })
     }
 }

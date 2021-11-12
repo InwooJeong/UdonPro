@@ -1,6 +1,6 @@
 package com.cookandroid.udonpro
 
 data class MemberListItem (
-    val username : String,
-    val profile : Int
+    val id : String = "",
+    val profile : String = ""
 )

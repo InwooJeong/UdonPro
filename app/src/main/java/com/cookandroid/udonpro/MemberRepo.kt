@@ -8,17 +8,17 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class ReportedRepo {
-    fun getData(): LiveData<MutableList<ReportedListItem>>{
-        val mutableData = MutableLiveData<MutableList<ReportedListItem>>()
+class MemberRepo {
+    fun getData(): LiveData<MutableList<MemberListItem>>{
+        val mutableData = MutableLiveData<MutableList<MemberListItem>>()
         val database = Firebase.database
-        val myRef = database.getReference("book").orderByChild("reported").startAt(1.0)
+        val myRef = database.getReference("UdonProject").child("UserAccount")
         myRef.addValueEventListener(object : ValueEventListener{
-            val listData : MutableList<ReportedListItem> = mutableListOf<ReportedListItem>()
+            val listData : MutableList<MemberListItem> = mutableListOf<MemberListItem>()
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-                    for(reportedSnapshot in snapshot.children){
-                        val getData = reportedSnapshot.getValue(ReportedListItem::class.java)
+                    for(memberSnapshot in snapshot.children){
+                        val getData = memberSnapshot.getValue(MemberListItem::class.java)
                         listData.add(getData!!)
 
                         mutableData.value = listData
