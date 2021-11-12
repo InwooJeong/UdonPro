@@ -6,17 +6,20 @@ import android.os.Bundle
 import android.widget.Button
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.chatbutton.*
+import kotlinx.android.synthetic.main.lend_book.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.chatbutton)
+        setContentView(R.layout.lend_book)
 
-        chatButton.setOnClickListener() {
-            val intent = Intent(applicationContext, ChatRoomActivity::class.java)
-            startActivity(intent)
-        }
+        val intent = Intent(applicationContext, LendBook::class.java)
+        startActivity(intent)
+
+//        chatButton.setOnClickListener() {
+//            val intent = Intent(applicationContext, ChatRoomActivity::class.java)
+//            startActivity(intent)
+//        }
 
 //        val writeBtn = findViewById<Button>(R.id.writeBtn)
 //

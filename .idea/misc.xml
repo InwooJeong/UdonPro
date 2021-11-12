@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chat_left.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chat_right_me.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chatbutton.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chatview.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/favoritebooklist.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/favoritebooklistitem.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/lend_book.xml" value="0.264" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/loginform.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/mainform.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/mlist_item.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/registerbook.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/registerform.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/rlist_item.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.11803444782168186" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/drawable/ic_account_circle_black_24dp.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.22083333333333333" />

@@ -7,6 +7,7 @@ import com.cookandroid.udonpro.Adapter.ChatLeftYou
 import com.cookandroid.udonpro.Adapter.ChatRightMe
 import com.cookandroid.udonpro.Model.ChatNewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,18 +22,20 @@ import kotlinx.android.synthetic.main.chatview.*
 
 class ChatRoomActivity : AppCompatActivity() {
 
-    private lateinit var auth : FirebaseAuth
+    //private lateinit var auth : FirebaseAuth
 
-    private  val TAG = ChatRoomActivity::class.java.simpleName
+    //private  val TAG = ChatRoomActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.chatview)
 
         //파이어베이스auth 초기화
-        auth = FirebaseAuth.getInstance()
+        //auth = FirebaseAuth.getInstance()
 
-        val myUid :String? = auth.uid
+        var user : FirebaseUser? = FirebaseAuth.getInstance().getCurrentUser()
+        var uid = if(user!= null) {user.getUid()} else {null}
+        //val myUid :String? = auth.uid
         val yourUid :String? = intent.getStringExtra("yourUid")
         val name :String? = intent.getStringExtra("name")
 
@@ -40,11 +43,10 @@ class ChatRoomActivity : AppCompatActivity() {
 
         val database = Firebase.database
         val myRef = database.getReference("message")
-        val readRef : DatabaseReference = database.getReference("message").child(myUid.toString()).child(yourUid.toString())
+        val readRef : DatabaseReference = database.getReference("message").child(uid.toString()).child(yourUid.toString())
 
         val childEventListener = object : ChildEventListener {
             override fun onChildAdded(p0 : DataSnapshot, p1: String?) {
-                Log.d(TAG, "p0 :" + p0)
                 val model : ChatNewModel? = p0.getValue(ChatNewModel::class.java)
 
                 val msg :String = model?.message.toString()
@@ -83,13 +85,13 @@ class ChatRoomActivity : AppCompatActivity() {
 
             val message = editText.text.toString()
 
-            val chat = ChatNewModel(myUid.toString(), yourUid.toString(), message, System.currentTimeMillis(), "me")
-            myRef.child(myUid.toString()).child(yourUid.toString()).push().setValue(chat)
+            val chat = ChatNewModel(uid.toString(), yourUid.toString(), message, System.currentTimeMillis(), "me")
+            myRef.child(uid.toString()).child(yourUid.toString()).push().setValue(chat)
 
-            val chat_get = ChatNewModel(yourUid.toString(), myUid.toString(), message, System.currentTimeMillis(), "you")
-            myRef.child(yourUid.toString()).child(myUid.toString()).push().setValue(chat_get)
+            val chat_get = ChatNewModel(yourUid.toString(), uid.toString(), message, System.currentTimeMillis(), "you")
+            myRef.child(yourUid.toString()).child(uid.toString()).push().setValue(chat_get)
 
-            myRef_list.child(myUid.toString()).child(yourUid.toString()).setValue(chat)
+            myRef_list.child(uid.toString()).child(yourUid.toString()).setValue(chat)
 
             editText.setText("")
 

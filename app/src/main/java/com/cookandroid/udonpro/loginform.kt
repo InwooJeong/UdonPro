@@ -48,6 +48,7 @@ class loginform : AppCompatActivity() {
                         Toast.makeText(this@loginform, "로그인 실패 ..", Toast.LENGTH_SHORT).show()
                     }
                 }
+
         }
         val btn_regi = findViewById<Button>(R.id.btn_regi)
         btn_regi.setOnClickListener { //회원가입 화면이동한다

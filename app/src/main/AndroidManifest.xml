@@ -12,9 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.UdonPro">
         <activity
-            android:name=".MainActivity"
+            android:name=".loginform"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +26,11 @@
         <activity
             android:name=".registerbook" android:label="registerbook">
         </activity>
+        <activity
+            android:name=".ChatRoomActivity" android:label="ChatRoomActivity">
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LendBook" />
     </application>
 
 </manifest>
