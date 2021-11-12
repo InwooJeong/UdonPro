@@ -1,5 +1,6 @@
 package com.cookandroid.udonpro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -16,19 +17,16 @@ import com.cookandroid.udonpro.UserAccount
 import android.widget.Toast
 
 class register : AppCompatActivity() {
-    lateinit var mFirebaseAuth //파이어베이스 인증처리
-            : FirebaseAuth
-    lateinit var mDatabaseRef // 실시간 데이터베이스
-            : DatabaseReference
+    lateinit var mFirebaseAuth : FirebaseAuth //파이어베이스 인증처리
+    lateinit var mDatabaseRef : DatabaseReference// 실시간 데이터베이스
+
     lateinit var mEtEmail: EditText
     lateinit var mEtPw: EditText
-    lateinit var mEtNumber //회원가입 입력 필드 , (주소 나중에처리할것)
-            : EditText
+    lateinit var mEtNumber : EditText //회원가입 입력 필드 , (주소 나중에처리할것)
     lateinit var mBtnRegister: Button
-    lateinit var mBtnMain //회원가입 입력버튼
-            : Button
+    lateinit var mBtnMain : Button //회원가입 입력버튼
 
-    //
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registerform)
@@ -40,13 +38,21 @@ class register : AppCompatActivity() {
         mEtPw = findViewById(R.id.et_pw)
         mEtNumber = findViewById(R.id.et_num)
         mBtnRegister = findViewById<Button>(R.id.btn_register)
-        mBtnMain = findViewById(R.id.btn_main)
+
 
         mBtnRegister.setOnClickListener(View.OnClickListener {
             //회원가입 처리 시작
             val strEmail = mEtEmail.getText().toString() //값을 가저와서, 문자열로 변환
             val strpw = mEtPw.getText().toString()
             //String inNum = mEtNumber.getText().toString();
+
+
+            val mBtnMain = findViewById<Button>(R.id.btn_main)
+            mBtnMain.setOnClickListener {
+                intent = Intent(this@register, MainActivity::class.java)
+                startActivity(intent)
+            }
+
 
             //firebaseAutho 진행
             mFirebaseAuth!!.createUserWithEmailAndPassword(strEmail, strpw)

@@ -16,10 +16,9 @@ import android.widget.Toast
 import com.cookandroid.udonpro.register
 
 class loginform : AppCompatActivity() {
-    lateinit var mFirebaseAuth //파이어베이스 인증처리
-            : FirebaseAuth
-    lateinit var mDatabaseRef // 실시간 데이터베이스
-            : DatabaseReference
+    lateinit var mFirebaseAuth : FirebaseAuth//파이어베이스 인증처리
+    lateinit var mDatabaseRef : DatabaseReference// 실시간 데이터베이스
+
     lateinit var mEtEmail: EditText
     lateinit var mEtPw: EditText
     //lateinit val mEtNumber : EditText
@@ -32,6 +31,8 @@ class loginform : AppCompatActivity() {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("UdonProject")
         mEtEmail = findViewById(R.id.et_email1)
         mEtPw = findViewById(R.id.et_pwd)
+
+
         val btn_login = findViewById<Button>(R.id.btn_login)
         btn_login.setOnClickListener {
             // 로그인 요청
@@ -43,13 +44,14 @@ class loginform : AppCompatActivity() {
                         //로그인 성공
                         val intent = Intent(this@loginform, MainActivity::class.java)
                         startActivity(intent)
-                        finish() // 현재 로그인 엑티비티 제거
+                        //finish() // 현재 로그인 엑티비티 제거
                     } else {
                         Toast.makeText(this@loginform, "로그인 실패 ..", Toast.LENGTH_SHORT).show()
                     }
                 }
 
         }
+
         val btn_regi = findViewById<Button>(R.id.btn_regi)
         btn_regi.setOnClickListener { //회원가입 화면이동한다
             val intent = Intent(this@loginform, register::class.java)
