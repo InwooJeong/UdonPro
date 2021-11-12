@@ -6,7 +6,7 @@ class UserAccount  //빈생성자 ,파이어베이스 사용할때 필수
 
     var idToken : String? = null //Firebase Uid (고유 정보 키값)
 
-    private var eMail: String? = null
+    var eMail: String? = null
     var password: String? = null
     var number: String? = null
 

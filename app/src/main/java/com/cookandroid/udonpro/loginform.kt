@@ -44,7 +44,7 @@ class loginform : AppCompatActivity() {
                         //로그인 성공
                         val intent = Intent(this@loginform, MainActivity::class.java)
                         startActivity(intent)
-                        finish() // 현재 로그인 엑티비티 제거
+                        //finish() // 현재 로그인 엑티비티 제거
                     } else {
                         Toast.makeText(this@loginform, "로그인 실패 ..", Toast.LENGTH_SHORT).show()
                     }

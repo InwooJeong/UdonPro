@@ -1,5 +1,6 @@
 package com.cookandroid.udonpro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -37,13 +38,21 @@ class register : AppCompatActivity() {
         mEtPw = findViewById(R.id.et_pw)
         mEtNumber = findViewById(R.id.et_num)
         mBtnRegister = findViewById<Button>(R.id.btn_register)
-        mBtnMain = findViewById(R.id.btn_main)
+
 
         mBtnRegister.setOnClickListener(View.OnClickListener {
             //회원가입 처리 시작
             val strEmail = mEtEmail.getText().toString() //값을 가저와서, 문자열로 변환
             val strpw = mEtPw.getText().toString()
             //String inNum = mEtNumber.getText().toString();
+
+
+            val mBtnMain = findViewById<Button>(R.id.btn_main)
+            mBtnMain.setOnClickListener {
+                intent = Intent(this@register, MainActivity::class.java)
+                startActivity(intent)
+            }
+
 
             //firebaseAutho 진행
             mFirebaseAuth!!.createUserWithEmailAndPassword(strEmail, strpw)

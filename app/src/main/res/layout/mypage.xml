@@ -4,30 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mypage">
+    tools:context=".newMypage">
 
     <Button
         android:id="@+id/btn_goBoard"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="14dp"
         android:backgroundTint="#de85bdfe"
         android:text="공지사항"
         app:layout_constraintBottom_toTopOf="@+id/btn_bookList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/btn_bookList"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
 
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="29dp"
         android:backgroundTint="#de85bdfe"
         android:text="공유도서목록"
         app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="@+id/btn_goBoard" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goBoard" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -59,7 +65,7 @@
         android:id="@+id/textView2"
         android:layout_width="199dp"
         android:layout_height="55dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="마이페이지"
         android:textSize="46dp"
@@ -131,14 +137,16 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="149dp"
         android:backgroundTint="#de85bdfe"
         android:text="대여도서목록"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bookList" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -152,12 +160,15 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="224dp"
+        android:layout_width="0dp"
         android:layout_height="117dp"
         android:layout_marginStart="164dp"
+        android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534"
-        app:srcCompat="@drawable/temperature" />
+        app:layout_constraintVertical_bias="0.432">
+        <!--        app:srcComapt="@drawable/temper">-->
+    </ImageView>
 </androidx.constraintlayout.widget.ConstraintLayout>

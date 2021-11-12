@@ -2,24 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/favorites"
-        android:icon="@drawable/ic_heart_gray_12dp"
-        android:title="Favorites"/>
-
-    <item
-        android:id="@+id/home"
+        android:id="@+id/btn_home"
         android:icon="@drawable/ic_home_24dp"
+        android:enabled="true"
         android:title="Home"/>
 
     <item
-        android:id="@+id/register"
-        android:icon="@drawable/ic_register_24dp"
-        android:title="Register"/>
+        android:id="@+id/btn_favorites"
+        android:icon="@drawable/ic_heart_gray_12dp"
+        android:enabled="true"
+        android:title="Favorites"/>
+
+
 
     <item
-        android:id="@+id/my"
+        android:id="@+id/btn_registerBook"
+        android:icon="@drawable/ic_register_24dp"
+        android:enabled="true"
+        android:title="RegisterBook"/>
+
+    <item
+        android:id="@+id/btn_mypage"
         android:icon="@drawable/ic_my_24dp"
-        android:title="My"/>
+        android:enabled="true"
+        android:title="Mypage"/>
 
 
 </menu>

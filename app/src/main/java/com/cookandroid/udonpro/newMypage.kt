@@ -1,23 +1,24 @@
 package com.cookandroid.udonpro
 
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
-import android.widget.Button
-import com.google.firebase.auth.FirebaseAuth
-import android.os.Bundle
-import com.cookandroid.udonpro.R
-import com.google.firebase.auth.FirebaseAuth.AuthStateListener
-import com.google.firebase.auth.FirebaseUser
-import android.content.DialogInterface
+import android.content.Context
 import android.content.Intent
-import com.cookandroid.udonpro.loginform
+import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
+import android.view.ViewGroup
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
 
-class mypage : AppCompatActivity() {
+
+
+class newMypage: Fragment() {
+
+
+
     lateinit var tv_userEmail: TextView
     lateinit var btn_logout: Button
 
@@ -32,11 +33,25 @@ class mypage : AppCompatActivity() {
     lateinit var userUid: String
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //setContentView(R.layout.mypage)
-        tv_userEmail = findViewById(R.id.tv_userEmail)
-        btn_logout = findViewById(R.id.btn_logout)
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+         savedInstanceState: Bundle?
+    ): View? {
+
+        val view = inflater.inflate(R.layout.mypage, container, false)
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val tv_userEmail = requireView().findViewById<EditText>(R.id.tv_userEmail) as TextView
+        val btn_logout = requireView().findViewById<Button>(R.id.btn_logout) as Button
+
+
+
         mAuth = FirebaseAuth.getInstance()
         mAuth!!.addAuthStateListener { firebaseAuth: FirebaseAuth? ->
             mAuth = FirebaseAuth.getInstance()
@@ -50,6 +65,7 @@ class mypage : AppCompatActivity() {
         btn_logout.setOnClickListener(View.OnClickListener { v: View -> onClick(v) })
     }
 
+
     fun onClick(view: View) {
         when (view.id) {
             R.id.btn_logout -> logout()
@@ -57,16 +73,18 @@ class mypage : AppCompatActivity() {
     }
 
     fun logout() {
-        val alt_builder = AlertDialog.Builder(this)
+
+        val alt_builder = AlertDialog.Builder(requireActivity())
         alt_builder.setTitle("로그아웃 확인")
         alt_builder.setOnDismissListener {
             //dismiss되면서 로그아웃
             if (confirmLogout) {
                 FirebaseAuth.getInstance().signOut()
+
                 //로그아웃하면 로그인페이지로 이동.
-                val intent = Intent(this@mypage, loginform::class.java)
+                val  intent = Intent(getActivity(), loginform::class.java)
                 startActivity(intent)
-                val currentUser = mAuth!!.currentUser
+
 
                 //로그아웃이 제대로 됐으면 .
                 Log.d("Logout", "로그아웃 성공")
@@ -77,7 +95,7 @@ class mypage : AppCompatActivity() {
                 confirmLogout = true
                 alert!!.dismiss()
                 Toast.makeText(
-                    this@mypage, "정상적으로 로그아웃 되었습니다",
+                    getActivity(), "정상적으로 로그아웃 되었습니다",
                     Toast.LENGTH_SHORT
                 ).show()
             }

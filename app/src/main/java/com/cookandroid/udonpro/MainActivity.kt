@@ -1,22 +1,29 @@
 package com.cookandroid.udonpro
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.chatbutton.*
+import android.view.MenuItem
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(),
+    NavigationBarView.OnItemSelectedListener {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.chatbutton)
+        setContentView(R.layout.activity_main)
+        bottom_navigation.setOnItemSelectedListener(this)
 
-        chatButton.setOnClickListener() {
-            val intent = Intent(applicationContext, ChatRoomActivity::class.java)
-            startActivity(intent)
-        }
+
+//        chatButton.setOnClickListener() {
+//            val intent = Intent(applicationContext, ChatRoomActivity::class.java)
+//            startActivity(intent)
+//        }
 
 //        val writeBtn = findViewById<Button>(R.id.writeBtn)
 //
@@ -27,6 +34,38 @@ class MainActivity : AppCompatActivity() {
 //
 //            myRef.setValue("Hello, World!")
     }
+
+
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        when(p0.itemId){
+            R.id.btn_home ->{
+                var page1 = newMypage()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, page1).commit()
+                return true
+            }
+            R.id.btn_favorites ->{
+                var page2 = newMypage()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, page2).commit()
+                return true
+            }
+            R.id.btn_registerBook ->{
+                var page3 = newMypage()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, page3).commit()
+                return true
+            }
+            R.id.btn_mypage ->{
+                var page4 = newMypage()
+                supportFragmentManager.beginTransaction().replace(R.id.main_content, page4).commit()
+                return true
+            }
+        }
+        return false
+    }
+
+
 }
 
-// hihihihihih1122ggggg
+
+
+
+
