@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -27,11 +28,23 @@ class ReportedList : AppCompatActivity(){
 
         rAdapter = ReportedListAdapter(this)
 
-        val recyclerView : RecyclerView = findViewById(R.id.reportedListView)
+        val recyclerView: RecyclerView = findViewById(R.id.reportedListView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = rAdapter
         observerData()
 
+        var swipe = findViewById<SwipeRefreshLayout>(R.id.swipeRefreshLayout)
+
+        swipe.setOnRefreshListener {
+            rAdapter = ReportedListAdapter(this)
+
+            val recyclerView: RecyclerView = findViewById(R.id.reportedListView)
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = rAdapter
+            observerData()
+
+            swipe.isRefreshing = false
+        }
     }
 
     fun observerData(){

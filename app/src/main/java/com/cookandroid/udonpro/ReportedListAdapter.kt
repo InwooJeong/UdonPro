@@ -1,5 +1,6 @@
 package com.cookandroid.udonpro
 
+import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -40,13 +41,11 @@ class ReportedListAdapter(private val context: Context):
         private val rlist_bpic: ImageView = itemView.findViewById(R.id.rlist_bpic)
         private val btnDel: Button = itemView.findViewById(R.id.btnDel)
 
-
-        /*init{
+        init{
             btnDel.setOnClickListener{
 
             }
-        }*/
-
+        }
 
         fun bind(item: ReportedListItem){
             rlist_btitle.text = item.title
