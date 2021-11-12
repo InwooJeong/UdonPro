@@ -15,21 +15,25 @@ import kotlinx.android.synthetic.main.rlist_item.*
 class ReportedListAdapter(private val context: Context):
     RecyclerView.Adapter<ReportedListAdapter.ViewHolder>(){
 
-    var datas = mutableListOf<ReportedListItem>()
+    var reportedList = mutableListOf<ReportedListItem>()
+
+    fun setListData(data:MutableList<ReportedListItem>){
+        reportedList = data
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): ViewHolder {
+    ): ReportedListAdapter.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.rlist_item,parent,false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ReportedListAdapter.ViewHolder, position: Int) {
-        holder.bind(datas[position])
+        holder.bind(reportedList[position])
     }
 
-    override fun getItemCount(): Int = datas.size
+    override fun getItemCount(): Int = reportedList.size
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val rlist_btitle: TextView = itemView.findViewById(R.id.rlist_btitle)
@@ -45,8 +49,8 @@ class ReportedListAdapter(private val context: Context):
 
 
         fun bind(item: ReportedListItem){
-            rlist_btitle.text = item.bookname
-            Glide.with(itemView).load(item.bookpic).into(rlist_bpic)
+            rlist_btitle.text = item.title
+            Glide.with(itemView).load(item.img).into(rlist_bpic)
         }
 
 
