@@ -14,6 +14,7 @@ import android.content.Intent
 import com.cookandroid.udonpro.MainActivity
 import android.widget.Toast
 import com.cookandroid.udonpro.register
+import kotlinx.android.synthetic.main.lend_book.*
 
 class loginform : AppCompatActivity() {
     lateinit var mFirebaseAuth : FirebaseAuth//파이어베이스 인증처리
@@ -42,7 +43,7 @@ class loginform : AppCompatActivity() {
                 .addOnCompleteListener(this@loginform) { task ->
                     if (task.isSuccessful) {
                         //로그인 성공
-                        val intent = Intent(this@loginform, MainActivity::class.java)
+                        val intent = Intent(this@loginform, LendBook::class.java)
                         startActivity(intent)
                         //finish() // 현재 로그인 엑티비티 제거
                     } else {
