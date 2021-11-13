@@ -6,37 +6,14 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="216dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lend_image" />
-
-    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
         android:layout_marginBottom="410dp"
         app:layout_constraintBottom_toTopOf="@+id/chatButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/primary_050" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:srcCompat="@drawable/publisher" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -60,7 +37,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:textSize="20dp"/>
 
     <ImageView
         android:id="@+id/imageView9"
@@ -73,22 +52,22 @@
         app:srcCompat="@drawable/light_image_lists_1_tile_a_overlay" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/wish_image"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="207dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="77dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintEnd_toStartOf="@+id/report_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
         app:srcCompat="@drawable/interest" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/hate_image"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/like_image"
         app:layout_constraintTop_toTopOf="@+id/like_image"
         app:srcCompat="@drawable/hate" />
@@ -98,97 +77,202 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/wish_image"
+        app:layout_constraintTop_toTopOf="@+id/wish_image"
         app:srcCompat="@drawable/like" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/report_image"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="67dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:layout_constraintStart_toEndOf="@+id/wish_image"
+        app:layout_constraintTop_toTopOf="@+id/hate_image"
         app:srcCompat="@drawable/declaration" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/report_text"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginEnd="67dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintStart_toEndOf="@+id/hate_number"
+        app:layout_constraintTop_toBottomOf="@+id/report_image"
         app:srcCompat="@drawable/declaration_1" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:id="@+id/wish_number"
+        android:layout_width="27dp"
+        android:layout_height="23dp"
         android:layout_marginStart="207dp"
         android:layout_marginEnd="4dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="0"
         app:layout_constraintEnd_toStartOf="@+id/like_number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintTop_toBottomOf="@+id/wish_image" />
 
     <TextView
         android:id="@+id/like_number"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_width="31dp"
+        android:layout_height="23dp"
         android:layout_marginEnd="4dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/hate_number"
+        app:layout_constraintStart_toEndOf="@+id/wish_number"
         app:layout_constraintTop_toBottomOf="@+id/like_image" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:id="@+id/hate_number"
+        android:layout_width="33dp"
+        android:layout_height="23dp"
         android:layout_marginEnd="9dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView14"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/report_text"
         app:layout_constraintStart_toEndOf="@+id/like_number"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="334dp"
-        android:layout_height="192dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:srcCompat="@drawable/disabled" />
+        app:layout_constraintTop_toBottomOf="@+id/hate_image" />
 
     <Button
         android:id="@+id/lend_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#eeb600"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="대여하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/chatButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <ImageView
         android:id="@+id/chatButton"
-        android:layout_width="66dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="120dp"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
         android:background="@color/purple_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
         app:layout_constraintStart_toEndOf="@+id/lend_button"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:srcCompat="@drawable/chat_image" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="372dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        android:background="#C0C0C0"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:gravity="center"
+        android:text="책이름"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/lend_date"
+        android:layout_width="131dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:hint="대여가능기간"
+        app:layout_constraintEnd_toEndOf="@+id/publisher_text"
+        app:layout_constraintTop_toBottomOf="@+id/publisher_text"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/publisher_text"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:hint="출판사"
+        app:layout_constraintEnd_toEndOf="@+id/book_title"
+        app:layout_constraintTop_toBottomOf="@+id/book_title" 
+        android:gravity="center"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="176dp"
+        android:hint="책이름"
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/textView14" 
+        android:gravity="center"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text="출판사"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        android:gravity="center"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="75dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text="대여가능기간"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        android:gravity="center"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="224dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:text="대여하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:gravity="center"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="89dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:gravity="center"
+        android:text="게시자"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
