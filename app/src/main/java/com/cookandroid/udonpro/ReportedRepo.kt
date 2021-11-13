@@ -15,8 +15,6 @@ class ReportedRepo {
         val mutableData = MutableLiveData<MutableList<ReportedListItem>>()
         val database = Firebase.database
         val myRef = database.getReference("book").orderByChild("reported").startAt(1.0)
-        //val storage = FirebaseStorage.getInstance()
-        //val stRef = storage.getReference("book_img/");
 
         myRef.addValueEventListener(object : ValueEventListener{
             val listData : MutableList<ReportedListItem> = mutableListOf<ReportedListItem>()
