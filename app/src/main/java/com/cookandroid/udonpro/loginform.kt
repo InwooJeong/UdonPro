@@ -43,7 +43,7 @@ class loginform : AppCompatActivity() {
                 .addOnCompleteListener(this@loginform) { task ->
                     if (task.isSuccessful) {
                         //로그인 성공
-                        val intent = Intent(this@loginform, LendBook::class.java)
+                        val intent = Intent(this@loginform, newMypage::class.java)
                         startActivity(intent)
                         //finish() // 현재 로그인 엑티비티 제거
                     } else {

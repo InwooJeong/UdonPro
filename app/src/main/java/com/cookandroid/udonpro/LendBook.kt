@@ -54,7 +54,7 @@ class LendBook : AppCompatActivity() {
 
         lend_button.setOnClickListener {
             Toast.makeText(this,"대여완료 되었습니다!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(applicationContext, loginform::class.java)
+            val intent = Intent(applicationContext, MainForm::class.java)
             startActivity(intent)
         }
 

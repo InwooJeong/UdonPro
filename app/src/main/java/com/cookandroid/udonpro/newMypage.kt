@@ -12,7 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast
-
+import kotlinx.android.synthetic.main.mypage.*
 
 
 class newMypage: Fragment() {
@@ -63,6 +63,16 @@ class newMypage: Fragment() {
 
 
         btn_logout.setOnClickListener(View.OnClickListener { v: View -> onClick(v) })
+
+        btn_goBoard.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("공지사항 입니다.")
+                .setMessage("12월 12일 22:00 ~ 23:00에 ver.1.23 업데이트가 있을 예정입니다.")
+                .setPositiveButton("확인") {
+                        DialogInterface, i ->
+                }.show()
+
+        }
     }
 
 
