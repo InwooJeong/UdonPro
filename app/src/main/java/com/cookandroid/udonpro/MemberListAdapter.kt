@@ -10,6 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.member_list.*
 import kotlinx.android.synthetic.main.mlist_item.*
 
@@ -49,8 +51,12 @@ class MemberListAdapter(private val context: Context):
 
         fun bind(item: MemberListItem){
             mlist_memberid.text = item.id
-            Glide.with(itemView).load(item.profile).into(mlist_profile)
-
+            //Glide.with(itemView).load(item.profile).into(mlist_profile)
+            Firebase.storage.reference.child("member_img/"+item.profile).downloadUrl.addOnCompleteListener{
+                if(it.isSuccessful){
+                    Glide.with(itemView).load(it.result).into(mlist_profile)
+                }
+            }
         }
     }
 }
