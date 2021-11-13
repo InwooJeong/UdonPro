@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -44,7 +45,7 @@ class ReportedListAdapter(private val context: Context):
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val rlist_btitle: TextView = itemView.findViewById(R.id.rlist_btitle)
         private val rlist_bpic: ImageView = itemView.findViewById(R.id.rlist_bpic)
-        private val btnDel: Button = itemView.findViewById(R.id.btnDel)
+        private val btnDel: ImageButton = itemView.findViewById(R.id.btnDel)
 
         init{
             btnDel.setOnClickListener{
