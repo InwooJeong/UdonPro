@@ -17,7 +17,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.reported_list.*
 import kotlinx.android.synthetic.main.rlist_item.*
-//정인우 커밋 테스트
+
 class ReportedList : AppCompatActivity(){
     lateinit var rAdapter: ReportedListAdapter
     val viewModel by lazy { ViewModelProvider(this).get(ReportedViewModel::class.java) }
