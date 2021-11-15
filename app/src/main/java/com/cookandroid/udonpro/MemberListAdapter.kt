@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.member_list.*
@@ -41,13 +42,13 @@ class MemberListAdapter(private val context: Context):
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         private val mlist_memberid: TextView = itemView.findViewById(R.id.mlist_memberid)
         private val mlist_profile: ImageView = itemView.findViewById(R.id.mlist_profile)
-        private val btnInfo: ImageButton = itemView.findViewById(R.id.btnInfo)
+        private val btnDel: ImageButton = itemView.findViewById(R.id.btnDel)
 
-        init{
+        /*init{
             btnInfo.setOnClickListener{
                 btnInfo.setImageResource(R.drawable.ic_user_24dp)
             }
-        }
+        }*/
 
         fun bind(item: MemberListItem){
             mlist_memberid.text = item.id
@@ -57,6 +58,11 @@ class MemberListAdapter(private val context: Context):
                     Glide.with(itemView).load(it.result).into(mlist_profile)
                 }
             }
+            btnDel.setOnClickListener{
+                val database = Firebase.database
+                database.getReference("UdonProject/UserAccount/"+item.idToken).removeValue()
+            }
+
         }
     }
 }

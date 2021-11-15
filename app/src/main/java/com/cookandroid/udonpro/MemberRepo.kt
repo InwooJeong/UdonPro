@@ -12,7 +12,7 @@ class MemberRepo {
     fun getData(): LiveData<MutableList<MemberListItem>>{
         val mutableData = MutableLiveData<MutableList<MemberListItem>>()
         val database = Firebase.database
-        val myRef = database.getReference("UdonProject").child("UserAccount")
+        val myRef = database.getReference("UdonProject").child("UserAccount").orderByChild("reported").startAt(3.0)
         myRef.addValueEventListener(object : ValueEventListener{
             val listData : MutableList<MemberListItem> = mutableListOf<MemberListItem>()
             override fun onDataChange(snapshot: DataSnapshot) {
