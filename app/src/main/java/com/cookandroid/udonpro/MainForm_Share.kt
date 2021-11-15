@@ -19,8 +19,6 @@ import com.google.firebase.ktx.Firebase
 
 
 class MainForm_Share : Fragment() {
-//    val database = Firebase.database
-//    val myRef = database.reference
 
     private lateinit var mAdapter: MainFormListAdapter
     val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
@@ -33,11 +31,12 @@ class MainForm_Share : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mAdapter = MainFormListAdapter(requireContext())
         val view = inflater.inflate(R.layout.mainformrecyclerview, container, false)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(context,2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+
+        mAdapter = MainFormListAdapter(requireContext())
         recyclerView.adapter = mAdapter
 
         observerData()
@@ -46,7 +45,7 @@ class MainForm_Share : Fragment() {
 
 
     private fun observerData(){
-        viewModel.fetchData().observe(viewLifecycleOwner, Observer {
+        viewModel.fetchDataShare().observe(viewLifecycleOwner, Observer {
             mAdapter.setListData(it)
             mAdapter.notifyDataSetChanged()
         })

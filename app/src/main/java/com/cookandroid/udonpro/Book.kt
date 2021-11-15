@@ -11,5 +11,5 @@ data class Book(
     var publish : String ="",
     var startDate : String ="",
     var endDate : String ="",
-    var bookType : String=""
+    var uid: String=""
 )

@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.gms.tasks.OnFailureListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -26,6 +27,9 @@ import java.text.Format
 import java.text.SimpleDateFormat
 
 class RegisterBook : Fragment() {
+    var user = FirebaseAuth.getInstance().getCurrentUser()
+    var uid = if(user!= null) {user!!.getUid()} else {null}
+
     var getGalleryImg: Int = 200
     lateinit var fileName: String
     var storage: FirebaseStorage = FirebaseStorage.getInstance()
@@ -85,11 +89,7 @@ class RegisterBook : Fragment() {
                 publish.text.toString(),
                 startdate.text.toString(),
                 enddate.text.toString(),
-                if (radioBtn1.isChecked) {
-                    radioBtn1.text.toString()
-                } else {
-                    radioBtn2.text.toString()
-                }
+                uid.toString()
             )
 
             var riversRef: StorageReference =
@@ -103,7 +103,13 @@ class RegisterBook : Fragment() {
             view.publish.setText("")
             view.startdate.setText("")
             view.enddate.setText("")
-            myRef.child("book").push().setValue(dataInput)
+            if(radioBtn1.isChecked) {
+                myRef.child(uid!!).child("book").child("공유도서").push().setValue(dataInput)
+                myRef.child("book").child("공유도서").push().setValue(dataInput)
+            }else if(radioBtn2.isChecked){
+                myRef.child(uid!!).child("book").child("요청도서").push().setValue(dataInput)
+                myRef.child("book").child("요청도서").push().setValue(dataInput)
+            }
 
 
         }
