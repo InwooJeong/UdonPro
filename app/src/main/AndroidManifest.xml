@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UdonPro">
         <activity
-            android:name=".loginform"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +24,8 @@
         </activity>
 
         <activity
-            android:name=".RegisterBook" android:label="registerbook">
-        </activity>
-        <activity
             android:name=".ChatRoomActivity" android:label="ChatRoomActivity">
         </activity>
-        <activity android:name=".MainActivity" />
         <activity android:name=".LendBook" />
     </application>
 

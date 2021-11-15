@@ -27,8 +27,8 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/btnInfo"
-        android:src="@drawable/ic_info_sand_24dp"
+        android:id="@+id/btnDel"
+        android:src="@drawable/ic_delete_black_24dp"
         android:background="#d5c467"
         android:gravity="center"
         android:layout_weight="1"/>
