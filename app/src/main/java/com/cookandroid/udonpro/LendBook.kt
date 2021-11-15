@@ -58,9 +58,9 @@ class LendBook : AppCompatActivity() {
             startActivity(intent)
         }
 
+        report_image.setOnClickListener {
 
-
-
+        }
 
     }
 
