@@ -14,6 +14,7 @@ import android.content.Intent
 import com.cookandroid.udonpro.MainActivity
 import android.widget.Toast
 import com.cookandroid.udonpro.register
+import kotlinx.android.synthetic.main.lend_book.*
 
 class loginform : AppCompatActivity() {
     lateinit var mFirebaseAuth : FirebaseAuth//파이어베이스 인증처리

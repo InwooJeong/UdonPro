@@ -3,10 +3,7 @@ package com.cookandroid.udonpro
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -39,17 +36,17 @@ class MainActivity : AppCompatActivity(),
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when(p0.itemId){
             R.id.btn_home ->{
-                var page1 = newMypage()
+                var page1 = MainForm()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page1).commit()
                 return true
             }
             R.id.btn_favorites ->{
-                var page2 = newMypage()
+                var page2 = MainForm_Request()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page2).commit()
                 return true
             }
             R.id.btn_registerBook ->{
-                var page3 = newMypage()
+                var page3 = RegisterBook()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page3).commit()
                 return true
             }

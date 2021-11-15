@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".registerbook" android:label="registerbook">
+            android:name=".RegisterBook" android:label="registerbook">
         </activity>
         <activity
             android:name=".ChatRoomActivity" android:label="ChatRoomActivity">

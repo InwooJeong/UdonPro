@@ -1,65 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="400dp"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="도서등록"
         android:textColor="#fa0a0a0a"
         android:textSize="45dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="293dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="133dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="51dp"
         android:layout_marginBottom="145dp"
         android:src="@drawable/addfile"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="180dp"
+
+    <EditText
+        android:id="@+id/bookname"
+        android:layout_width="160dp"
         android:layout_height="30dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="292dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="81dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/sdate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222" />
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
         android:id="@+id/tv_userEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="출판사"
         android:textColor="#fa0a0a0a"
         android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/bookname"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -67,29 +69,30 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="280dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="책이름"
         android:textColor="#fa0a0a0a"
         android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/bookname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="180dp"
+    <EditText
+        android:id="@+id/publish"
+        android:layout_width="160dp"
         android:layout_height="30dp"
-        android:layout_marginTop="365dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="59dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/sdate"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toEndOf="@+id/tv_userEmail"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookname"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -97,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="433dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="77dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="대여가능 기간"
@@ -107,35 +110,34 @@
         app:layout_constraintEnd_toEndOf="@+id/tv_userEmail"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_userEmail" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/startdate"
         android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginTop="58dp"
         android:layout_marginBottom="57dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/radiogroup"
         app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="@+id/publish"
+        app:layout_constraintTop_toBottomOf="@+id/tv_userEmail"
+        app:layout_constraintVertical_bias="0.483" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/sdate"
         android:layout_width="33dp"
         android:layout_height="29dp"
-        android:layout_marginStart="144dp"
+        android:layout_marginStart="172dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
         android:src="@drawable/calender"
-        app:layout_constraintBottom_toTopOf="@+id/radiogroup"
+        app:layout_constraintBottom_toBottomOf="@+id/startdate"
         app:layout_constraintStart_toStartOf="@+id/radiogroup"
-        app:layout_constraintTop_toTopOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/startdate"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView7"
@@ -148,47 +150,46 @@
         android:text="~"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/enddate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/sdate"
+        app:layout_constraintTop_toTopOf="@+id/startdate"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/enddate"
         android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="217dp"
+        android:layout_marginTop="15dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintBottom_toTopOf="@+id/radiogroup"
+        app:layout_constraintStart_toStartOf="@+id/startdate"
+        app:layout_constraintTop_toBottomOf="@+id/startdate"
+        app:layout_constraintVertical_bias="0.257" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/edate"
         android:layout_width="33dp"
         android:layout_height="29dp"
         android:background="#FFFFFF"
         android:elevation="10dp"
         android:src="@drawable/calender"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/sdate"
+        app:layout_constraintEnd_toStartOf="@+id/sdate"
         app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/startdate"
+        app:layout_constraintTop_toTopOf="@+id/enddate"
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radiogroup"
-        android:layout_width="232dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="234dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="139dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/tv_userEmail"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <RadioButton
@@ -217,11 +218,12 @@
         android:id="@+id/registerBtn"
         android:layout_width="131dp"
         android:layout_height="41dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#eeb600"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="등록하기"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
 

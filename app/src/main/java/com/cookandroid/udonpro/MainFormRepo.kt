@@ -10,20 +10,20 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
-class ReportedRepo {
-    fun getData(): LiveData<MutableList<ReportedListItem>>{
-        val mutableData = MutableLiveData<MutableList<ReportedListItem>>()
+class MainFormRepo {
+    fun getData(): LiveData<MutableList<MainFormListItem>>{
+        val mutableData = MutableLiveData<MutableList<MainFormListItem>>()
         val database = Firebase.database
         val myRef = database.getReference("book").orderByChild("reported").startAt(1.0)
 
         myRef.addValueEventListener(object : ValueEventListener{
-            val listData : MutableList<ReportedListItem> = mutableListOf<ReportedListItem>()
+            val listData : MutableList<MainFormListItem> = mutableListOf<MainFormListItem>()
             override fun onDataChange(snapshot: DataSnapshot) {
                 listData.clear()
 
                 if(snapshot.exists()){
                     for(reportedSnapshot in snapshot.children){
-                        val getData = reportedSnapshot.getValue(ReportedListItem::class.java)
+                        val getData = reportedSnapshot.getValue(MainFormListItem::class.java)
                         listData.add(getData!!)
 
                         mutableData.value = listData
@@ -35,7 +35,7 @@ class ReportedRepo {
                 TODO("Not yet implemented")
             }
         })
-        
+
         return mutableData
     }
 
