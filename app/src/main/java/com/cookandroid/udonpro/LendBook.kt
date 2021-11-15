@@ -9,12 +9,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.lend_book.*
 
 class LendBook : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lend_book)
+        val uid = intent.getStringExtra("uid").toString()
+        val title = intent.getStringExtra("title").toString()
+        val publish = intent.getStringExtra("publish").toString()
+        val startDate = intent.getStringExtra("startDate").toString()
+        val endDate = intent.getStringExtra("endDate").toString()
+        val img = intent.getStringExtra("img").toString()
+
+
 
 //        val chatButton = findViewById<ImageView>(R.id.chatButton)
 //        chatButton.setOnClickListener {
@@ -23,7 +35,8 @@ class LendBook : AppCompatActivity() {
 
         chatButton.setOnClickListener {
             val intent = Intent(applicationContext, ChatRoomActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("uid", uid)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
 
         }
 
@@ -34,7 +47,21 @@ class LendBook : AppCompatActivity() {
         val hate_num = findViewById<TextView>(R.id.hate_number)
         val hate_image = findViewById<ImageView>(R.id.hate_image)
         val report_text = findViewById<ImageView>(R.id.report_text)
-        var counter = 0
+
+        // 데이터 값 받아오기
+        userid.text = uid
+        Firebase.storage.reference.child("book_img/" + img).downloadUrl.addOnCompleteListener {
+            if (it.isSuccessful) {
+                Glide.with(imageView9).load(it.result).into(imageView9)
+            }
+        }
+        book_title.text = title
+        publisher_text.text = publish
+        var str = startDate + "~" + endDate
+        lend_date.text = str
+
+
+
 
         like_image.setOnClickListener {
             var counter = 0
@@ -84,6 +111,13 @@ class LendBook : AppCompatActivity() {
             builder.show()
         }
 
+//        userid.setOnClickListener {
+//            val intent = Intent(this, Uploader::class.java)
+//            intent.putExtra("uid", uid)
+//            intent.putExtra("title", title)
+//            intent.putExtra("img", img)
+//            startActivity(intent)
+//        }
     }
 
 }

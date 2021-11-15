@@ -10,12 +10,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cookandroid.udonpro.R
 
 class MainForm_Request : Fragment() {
 
     private lateinit var mAdapter: MainFormListAdapter
-    val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    val viewModel by lazy { ViewModelProvider(this).get(ViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) }
     override fun onAttach(context: Context) { super.onAttach(context) }

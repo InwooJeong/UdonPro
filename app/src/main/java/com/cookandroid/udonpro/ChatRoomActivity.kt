@@ -1,5 +1,6 @@
 package com.cookandroid.udonpro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,30 +27,42 @@ class ChatRoomActivity : AppCompatActivity() {
 
     //private  val TAG = ChatRoomActivity::class.java.simpleName
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.chatview)
 
+//        val intent = Intent(context, LendBook::class.java)
+//        intent.putExtra("uid",item.uid)
+
         //파이어베이스auth 초기화
         //auth = FirebaseAuth.getInstance()
 
-        var user : FirebaseUser? = FirebaseAuth.getInstance().getCurrentUser()
-        var uid = if(user!= null) {user.getUid()} else {null}
+//        var user : FirebaseUser? = FirebaseAuth.getInstance().getCurrentUser()
+//        var myuid = if(user!= null) {user.getUid()} else {null}
+        auth = FirebaseAuth.getInstance()
+
+        val myuid :String? = auth.uid
         //val myUid :String? = auth.uid
-        val yourUid :String? = intent.getStringExtra("yourUid")
+        val yourUid = intent.getStringExtra("uid").toString()
+        Log.d("1111111111",yourUid + "1111111111111111!!!!!!!!!!!!!!!!!!!!!!!")
         val name :String? = intent.getStringExtra("name")
 
         val adapter = GroupAdapter<GroupieViewHolder>()
 
         val database = Firebase.database
         val myRef = database.getReference("message")
-        val readRef : DatabaseReference = database.getReference("message").child(uid.toString()).child(yourUid.toString())
+        val readRef : DatabaseReference = database.getReference("message").child("uid").child(yourUid)//.child(myuid.toString()).child(yourUid)
 
-        val childEventListener = object : ChildEventListener {
+
+        //변경된 데이터만 불러오는것
+       val childEventListener = object : ChildEventListener {
             override fun onChildAdded(p0 : DataSnapshot, p1: String?) {
                 val model : ChatNewModel? = p0.getValue(ChatNewModel::class.java)
 
                 val msg :String = model?.message.toString()
+                Log.d("1111111111",msg + "1111111111111111!!!!!!!!!!!!!!!!!!!!!!!")
                 val who :String? = model?.who
 
                 if(who == "me") {
@@ -85,13 +98,13 @@ class ChatRoomActivity : AppCompatActivity() {
 
             val message = editText.text.toString()
 
-            val chat = ChatNewModel(uid.toString(), yourUid.toString(), message, System.currentTimeMillis(), "me")
-            myRef.child(uid.toString()).child(yourUid.toString()).push().setValue(chat)
+            val chat = ChatNewModel(myuid.toString(), yourUid, message, System.currentTimeMillis(), "me")
+            myRef.child(myuid.toString()).child(yourUid).push().setValue(chat)
 
-            val chat_get = ChatNewModel(yourUid.toString(), uid.toString(), message, System.currentTimeMillis(), "you")
-            myRef.child(yourUid.toString()).child(uid.toString()).push().setValue(chat_get)
+            val chat_get = ChatNewModel(yourUid, myuid.toString(), message, System.currentTimeMillis(), "you")
+            myRef.child(yourUid).child(myuid.toString()).push().setValue(chat_get)
 
-            myRef_list.child(uid.toString()).child(yourUid.toString()).setValue(chat)
+            myRef_list.child(myuid.toString()).child(yourUid).setValue(chat)
 
             editText.setText("")
 
