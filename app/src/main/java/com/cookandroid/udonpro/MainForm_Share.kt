@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cookandroid.udonpro.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -21,6 +23,8 @@ import com.google.firebase.ktx.Firebase
 class MainForm_Share : Fragment() {
 //    val database = Firebase.database
 //    val myRef = database.reference
+
+
 
     private lateinit var mAdapter: MainFormListAdapter
     val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
@@ -41,6 +45,7 @@ class MainForm_Share : Fragment() {
         recyclerView.adapter = mAdapter
 
         observerData()
+
         return view
     }
 

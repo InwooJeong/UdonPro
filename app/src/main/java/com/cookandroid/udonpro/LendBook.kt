@@ -14,6 +14,7 @@ class LendBook : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lend_book)
 
+
 //        val chatButton = findViewById<ImageView>(R.id.chatButton)
 //        chatButton.setOnClickListener {
 //            startActivity(Intent(this, ChatRoomActivity::class.java))

@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(),
                 return true
             }
             R.id.btn_mypage ->{
-                var page4 = newMypage()
+                var page4 = Uploader()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page4).commit()
                 return true
             }

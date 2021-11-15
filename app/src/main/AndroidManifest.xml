@@ -30,6 +30,7 @@
             android:name=".ChatRoomActivity" android:label="ChatRoomActivity">
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".register" />
         <activity android:name=".LendBook" />
     </application>
 
