@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cookandroid.udonpro">
 
 
@@ -24,13 +25,15 @@
         </activity>
 
         <activity
-            android:name=".RegisterBook" android:label="registerbook">
+            android:name=".RegisterBook" android:label="registerbook"
+            tools:ignore="Instantiatable">
         </activity>
         <activity
             android:name=".ChatRoomActivity" android:label="ChatRoomActivity">
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LendBook" />
+        <activity android:name=".register" />
     </application>
 
 </manifest>

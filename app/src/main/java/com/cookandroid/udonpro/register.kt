@@ -15,9 +15,12 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseUser
 import com.cookandroid.udonpro.UserAccount
 import android.widget.Toast
+import com.google.firebase.firestore.auth.User
 
 class register : AppCompatActivity() {
     lateinit var mFirebaseAuth : FirebaseAuth //파이어베이스 인증처리
+
+
     lateinit var mDatabaseRef : DatabaseReference// 실시간 데이터베이스
 
     lateinit var mEtEmail: EditText
@@ -27,9 +30,11 @@ class register : AppCompatActivity() {
     lateinit var mBtnMain : Button //회원가입 입력버튼
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registerform)
+
 
 
         mFirebaseAuth = FirebaseAuth.getInstance()
@@ -42,8 +47,8 @@ class register : AppCompatActivity() {
 
         mBtnRegister.setOnClickListener(View.OnClickListener {
             //회원가입 처리 시작
-            val strEmail = mEtEmail.getText().toString() //값을 가저와서, 문자열로 변환
-            val strpw = mEtPw.getText().toString()
+            val strEmail = mEtEmail.text.toString() //값을 가저와서, 문자열로 변환
+            val strpw = mEtPw.text.toString()
             //String inNum = mEtNumber.getText().toString();
 
 
@@ -58,23 +63,51 @@ class register : AppCompatActivity() {
             mFirebaseAuth!!.createUserWithEmailAndPassword(strEmail, strpw)
                 .addOnCompleteListener(this@register) { task ->
                     //가입이 이루어진뒤 처리
+
                     if (task.isSuccessful) {
                         val firebaseUser = mFirebaseAuth!!.currentUser
                         val account = UserAccount()
+
                         account.idToken = firebaseUser!!.uid //파이어베이스에서 가저옴 (고유)
-                        account.seteMail(firebaseUser.email)
+
+                        val fireEmail = firebaseUser.email
+                        account.eMail = fireEmail.toString()
+
+//                      val firePassword = firebaseUser.password
+//                        account.password = firePassword.toString()
+
+                        //account.eMail(firebaseUser.email)
                         account.password = strpw //사용자가 입력한곳에서 가저옴
                         //account.setNumber(firebaseUser.getPhoneNumber());
 
+                        //saveUserToFirebaseDatabase()
+
+
                         // setValue : database에서 insert 해준
-                        mDatabaseRef!!.child("UserAccount").child(firebaseUser.uid)
+                        mDatabaseRef.child("UserAccount").child(firebaseUser.uid)
                             .setValue(account)
+
+
+
+                        intent = Intent(this@register, MainActivity::class.java)
+                        startActivity(intent)
+
                         Toast.makeText(this@register, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show()
+
+
                     } else {
                         Toast.makeText(this@register, "회원가입에 실패하셨습니다", Toast.LENGTH_SHORT).show()
                     }
                 }
+
         })
 
     }
+
+//    private fun saveUserToFirebaseDatabase() {
+//        val uid = FirebaseAuth.getInstance().uid
+//        val ref = FirebaseDatabase.getInstance().getReference("/UserAccount/$uid")
+//
+//        val user = User(uid, mEtEmail.text.toString())
+//    }
 }
