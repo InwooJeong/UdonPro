@@ -24,9 +24,6 @@
         </activity>
 
         <activity
-            android:name=".RegisterBook" android:label="registerbook">
-        </activity>
-        <activity
             android:name=".ChatRoomActivity" android:label="ChatRoomActivity">
         </activity>
         <activity android:name=".MainActivity" />

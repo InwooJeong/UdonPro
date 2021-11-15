@@ -69,7 +69,7 @@ class newMypage: Fragment() {
 //            builder.setTitle("공지사항 입니다.")
 //                .setMessage("12월 12일 22:00 ~ 23:00에 ver.1.23 업데이트가 있을 예정입니다.")
 //                .setPositiveButton("확인") {
-//                        DialogInterface, i ->
+//                        DialogInterface, i -> ""
 //                }.show()
 //
 //        }
