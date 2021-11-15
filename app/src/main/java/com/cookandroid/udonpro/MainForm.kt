@@ -47,7 +47,6 @@ class MainForm : Fragment() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                viewPager!!.currentItem = tab!!.position
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {

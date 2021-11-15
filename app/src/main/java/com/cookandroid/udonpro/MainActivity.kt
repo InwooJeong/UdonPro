@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),
                 return true
             }
             R.id.btn_registerBook ->{
-                var page3 = newMypage()
+                var page3 = RegisterBook()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page3).commit()
                 return true
             }
