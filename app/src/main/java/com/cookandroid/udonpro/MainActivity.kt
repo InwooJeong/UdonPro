@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(),
                 return true
             }
             R.id.btn_favorites ->{
-                var page2 = MainForm_Request()
+                var page2 = FavoriteList()
                 supportFragmentManager.beginTransaction().replace(R.id.main_content, page2).commit()
                 return true
             }

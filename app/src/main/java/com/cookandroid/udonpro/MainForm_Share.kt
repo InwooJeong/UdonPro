@@ -10,18 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cookandroid.udonpro.R
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 
 
 class MainForm_Share : Fragment() {
 
     private lateinit var mAdapter: MainFormListAdapter
-    val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    val viewModel by lazy { ViewModelProvider(this).get(ViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) }
     override fun onAttach(context: Context) { super.onAttach(context) }

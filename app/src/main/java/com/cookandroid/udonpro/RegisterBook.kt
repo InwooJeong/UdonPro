@@ -15,6 +15,7 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.datatransport.runtime.dagger.multibindings.StringKey
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -89,29 +90,26 @@ class RegisterBook : Fragment() {
                 publish.text.toString(),
                 startdate.text.toString(),
                 enddate.text.toString(),
-                uid.toString()
+                uid.toString(),
+                if(radioBtn1.isChecked) {
+                    radioBtn1.text.toString()
+                }else{
+                    radioBtn2.text.toString()
+                }
             )
 
             var riversRef: StorageReference =
                 storage.reference.child("book_img/"+fileName)
             var uploadTask: UploadTask = riversRef.putFile(selectedImgUri!!)
 
-
+            myRef.child(uid.toString()).child("book").push().setValue(dataInput)
+            myRef.child("book").push().setValue(dataInput)
             Toast.makeText(context, "등록되었습니다!", Toast.LENGTH_SHORT).show()
             view.imageView2.setImageResource(R.drawable.addfile)
             view.bookname.setText("")
             view.publish.setText("")
             view.startdate.setText("")
             view.enddate.setText("")
-            if(radioBtn1.isChecked) {
-                myRef.child(uid!!).child("book").child("공유도서").push().setValue(dataInput)
-                myRef.child("book").child("공유도서").push().setValue(dataInput)
-            }else if(radioBtn2.isChecked){
-                myRef.child(uid!!).child("book").child("요청도서").push().setValue(dataInput)
-                myRef.child("book").child("요청도서").push().setValue(dataInput)
-            }
-
-
         }
         return view
     }
