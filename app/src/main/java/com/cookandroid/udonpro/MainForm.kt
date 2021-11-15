@@ -1,6 +1,7 @@
 package com.cookandroid.udonpro
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.android.synthetic.main.mainform.*
 
 class MainForm : Fragment() {
 
@@ -54,6 +56,9 @@ class MainForm : Fragment() {
             }
         })
         return view
+
+
+
     }
 }
 

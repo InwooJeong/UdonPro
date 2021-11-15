@@ -24,6 +24,7 @@ class LendBook : AppCompatActivity() {
         chatButton.setOnClickListener {
             val intent = Intent(applicationContext, ChatRoomActivity::class.java)
             startActivity(intent)
+
         }
 
         val like_num = findViewById<TextView>(R.id.like_number)

@@ -70,8 +70,6 @@ class RegisterBook : Fragment() {
             dialog.show()
         }
 
-
-
         view.imageView2.setOnClickListener(View.OnClickListener {
             var intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
