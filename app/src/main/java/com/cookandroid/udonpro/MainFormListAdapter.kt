@@ -43,8 +43,9 @@ class MainFormListAdapter(private val context: Context):
         private val favorite: ImageView = itemView.findViewById(R.id.favorite)
 
         init{
-            favorite.setOnClickListener{
 
+            favorite.setOnClickListener{
+                favorite.setImageResource(R.drawable.ic_heart_red_12dp)
             }
         }
 

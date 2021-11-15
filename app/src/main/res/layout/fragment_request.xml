@@ -26,8 +26,8 @@
         android:layout_height="29dp"
         android:layout_below="@+id/bookImg"
         android:layout_gravity="right"
-        android:layout_marginLeft="271dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/bookName"
         android:src="@drawable/ic_heart_gray_12dp" />
 
