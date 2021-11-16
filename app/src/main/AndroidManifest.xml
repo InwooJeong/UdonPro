@@ -35,6 +35,9 @@
         <activity android:name=".register" />
         <activity android:name=".LendBook" />
         <activity android:name=".Uploader"/>
+        <activity android:name=".AdminPage"/>
+        <activity android:name=".MemberList"/>
+        <activity android:name=".ReportedList"/>
     </application>
 
 </manifest>

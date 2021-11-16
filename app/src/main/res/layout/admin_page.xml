@@ -8,40 +8,59 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="199dp"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="43dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:gravity="center"
         android:text="관리자"
         android:textSize="46dp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="91dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_goBoard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_goBoard"
-        android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="26dp"
         android:backgroundTint="#de85bdfe"
         android:text="공지사항"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="189dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_bookList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/btn_bookList"
-        android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="#de85bdfe"
         android:text="신고 목록"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goBoard" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="280dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="341dp"
         android:backgroundTint="#de85bdfe"
         android:text="회원 목록"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="341dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bookList" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

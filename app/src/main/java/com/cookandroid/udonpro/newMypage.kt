@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 
 
-class newMypage: Fragment() {
-
+class newMypage : Fragment() {
 
 
     lateinit var tv_userEmail: TextView
@@ -23,11 +22,10 @@ class newMypage: Fragment() {
     lateinit var userUid: String
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-         savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
 
         val view = inflater.inflate(R.layout.mypage, container, false)
@@ -40,8 +38,7 @@ class newMypage: Fragment() {
 
         val tv_userEmail = requireView().findViewById<EditText>(R.id.tv_userEmail2) as TextView
         val btn_logout = requireView().findViewById<Button>(R.id.btn_logout) as Button
-
-
+        val btnAdmin = requireView().findViewById<Button>(R.id.adminPage) as Button
 
         mAuth = FirebaseAuth.getInstance()
         mAuth!!.addAuthStateListener { firebaseAuth: FirebaseAuth? ->
@@ -53,12 +50,19 @@ class newMypage: Fragment() {
         userUid = currentUser.uid
         tv_userEmail.setText(userEmail)
 
-//로그아웃.
-    btn_logout.setOnClickListener {
-        val intent = Intent(getActivity(), loginform::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-        mAuth.signOut()
-    }
+        //로그아웃.
+        btn_logout.setOnClickListener {
+            val intent = Intent(getActivity(), loginform::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            mAuth.signOut()
+        }
+
+        btnAdmin.setOnClickListener{
+            val intent = Intent(getActivity(), AdminPage::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            mAuth.signOut()
+        }
     }
 }

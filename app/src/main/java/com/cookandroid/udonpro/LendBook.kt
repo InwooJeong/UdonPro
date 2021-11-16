@@ -92,7 +92,7 @@ class LendBook : AppCompatActivity() {
         }
 
         userid.setOnClickListener {
-            val intent = Intent(this, Uploader::class.java)
+            val intent = Intent(applicationContext, com.cookandroid.udonpro.Uploader::class.java)
             intent.putExtra("uid", uid)
             intent.putExtra("title", title)
             intent.putExtra("img", img)

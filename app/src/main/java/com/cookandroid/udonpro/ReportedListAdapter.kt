@@ -69,7 +69,7 @@ class ReportedListAdapter(private val context: Context):
                 //val myRef = databse.getReference("book").orderByChild("title").equalTo(item.title)
                 //Log.d("태그", "선택 : "+item.title)
 
-                databse.getReference("book/"+item.uid+item.title).removeValue()
+                databse.getReference("book/"+item.key).removeValue()
 
             }
         }

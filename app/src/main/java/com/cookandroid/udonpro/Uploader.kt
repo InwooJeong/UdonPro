@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,12 +53,12 @@ class Uploader : AppCompatActivity() {
         val uid = intent.getStringExtra("uid").toString()
         val title = intent.getStringExtra("title").toString()
         val img = intent.getStringExtra("img").toString()
-        val userEmail = intent.getStringExtra("userEmail").toString()
+        //val userEmail = intent.getStringExtra("userEmail").toString()
         //데이터 값 받아오기.
-        tv_userEmail2.text = userEmail
+        tv_userEmail2.text = uid
 
         Firebase.storage.reference.child("book_img/" + img).downloadUrl.addOnCompleteListener {
-            recyclerView1.layoutManager = LinearLayoutManager(this)
+            recyclerView1.layoutManager = GridLayoutManager(this,2)
             recyclerView1.adapter = mAdapter
         }
 
