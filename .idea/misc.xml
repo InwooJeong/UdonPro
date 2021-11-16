@@ -4,7 +4,6 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.19927536231884058" />
-        <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/admin_page.xml" value="0.19157608695652173" />
         <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chat_left.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chat_right_me.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/-js-0/AndroidStudioProjects/UdonPro/app/src/main/res/layout/chatbutton.xml" value="0.19927536231884058" />
@@ -51,6 +50,7 @@
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/drawable/ic_thumb_up_black_12dp.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/font/font.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/admin_page.xml" value="0.25" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/chat_left.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/chat_right_me.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/chatbutton.xml" value="0.20572916666666666" />
@@ -58,12 +58,15 @@
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/favoritebooklist.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/favoritebooklistitem.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/fragment_request.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/lend_book.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/loginform.xml" value="0.18888888888888888" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/mainform.xml" value="0.33796296296296297" />
+        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/mainformrecyclerview.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/member_info.xml" value="0.25" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/member_list.xml" value="0.22" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/member_list_item.xml" value="0.3055987558320373" />
+        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/message_list_row.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/mlist_item.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/mypage.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/notice.xml" value="0.18541666666666667" />
@@ -72,6 +75,7 @@
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/reported_list.xml" value="0.28860759493670884" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/rlist_del_dia.xml" value="0.20625" />
         <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/rlist_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/admin/Desktop/UdonPro/app/src/main/res/layout/uploader.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>
