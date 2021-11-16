@@ -32,7 +32,7 @@ class MainForm : Fragment() {
         var view: View = inflater.inflate(R.layout.mainform, container, false)
 
         viewPager= view.findViewById<ViewPager2>(R.id.viewPager)
-        tabLayout= view.findViewById<TabLayout>(R.id.tablayout)
+        tabLayout= view.findViewById<TabLayout>(R.id.tablayout2)
 
         var viewpagerFragmentAdapter = ViewpagerFragmentAdapter(this)
         viewPager?.adapter =  viewpagerFragmentAdapter

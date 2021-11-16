@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlin.math.log
 
 class MainFormListAdapter(private val context: Context) :
     RecyclerView.Adapter<MainFormListAdapter.ViewHolder>() {
@@ -77,7 +78,10 @@ class MainFormListAdapter(private val context: Context) :
             }
 
             bookImg.setOnClickListener{
+
+                Log.d("userMail", item.userEmail + "222222222222")
                 val intent = Intent(context, LendBook::class.java)
+                intent.putExtra("userEmail",item.userEmail)
                 intent.putExtra("uid",item.uid)
                 intent.putExtra("title",item.title)
                 intent.putExtra("publish",item.publish)
@@ -85,6 +89,7 @@ class MainFormListAdapter(private val context: Context) :
                 intent.putExtra("endDate",item.endDate)
                 intent.putExtra("img",item.img)
                 context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+
             }
         }
 

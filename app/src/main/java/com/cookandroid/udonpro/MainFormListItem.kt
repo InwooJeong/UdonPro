@@ -1,14 +1,14 @@
 package com.cookandroid.udonpro
 
-import android.os.Message
-import com.google.android.datatransport.runtime.dagger.multibindings.StringKey
+import android.content.Context
 
 
 data class MainFormListItem(
+    val userEmail: String = "",
     val img: String = "",
     val title: String = "",
     val uid: String="",
     val publish: String="",
     val startDate: String="",
-    val endDate: String="",
+    val endDate: String=""
 )
