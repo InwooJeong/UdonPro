@@ -17,7 +17,6 @@ class ReportedRepo {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("book")
 
-
             myRef.addValueEventListener(object : ValueEventListener {
                 val listData: MutableList<ReportedListItem> = mutableListOf<ReportedListItem>()
                 override fun onDataChange(snapshot: DataSnapshot) {
