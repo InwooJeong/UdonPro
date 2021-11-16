@@ -18,7 +18,10 @@ import androidx.fragment.app.Fragment
 import com.google.android.datatransport.runtime.dagger.multibindings.StringKey
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -81,6 +84,7 @@ class RegisterBook : Fragment() {
             val database = FirebaseDatabase.getInstance()
             val myRef = database.getReference()
             fileName = bookname.text.toString()
+
 
             val dataInput = Book(
                 bookname.text.toString(),

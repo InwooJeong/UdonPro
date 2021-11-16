@@ -23,8 +23,8 @@ class ViewModel : ViewModel() {
         return mutableData
     }
 
-    fun fetchDataFavorite(): LiveData<MutableList<MainFormListItem>>{
-        val mutableData = MutableLiveData<MutableList<MainFormListItem>>()
+    fun fetchDataFavorite(): LiveData<MutableList<FavoriteListItem>>{
+        val mutableData = MutableLiveData<MutableList<FavoriteListItem>>()
         mainFormRepo.getDataFavorite().observeForever{
             mutableData.value = it
         }

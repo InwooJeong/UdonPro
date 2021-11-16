@@ -1,8 +1,11 @@
 package com.cookandroid.udonpro
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
+import com.cookandroid.udonpro.databinding.MainformBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -10,6 +13,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import kotlin.coroutines.coroutineContext
+import com.cookandroid.udonpro.MainFormListItem as MainFormListItem
 
 class MainFormRepo {
     var user = FirebaseAuth.getInstance().getCurrentUser()
@@ -74,26 +79,31 @@ class MainFormRepo {
     }
 
     // 찜한 도서 목록
-    fun getDataFavorite(): LiveData<MutableList<MainFormListItem>>{
-        val mutableData = MutableLiveData<MutableList<MainFormListItem>>()
+    fun getDataFavorite(): LiveData<MutableList<FavoriteListItem>>{
+        val mutableData = MutableLiveData<MutableList<FavoriteListItem>>()
         val database = Firebase.database
-        val myRef = database.getReference(uid.toString()).child("favoritecnt").child("book")
+        val myRef = database.getReference(uid.toString()).child("favoritecnt")
 
 
             myRef.addValueEventListener(object : ValueEventListener {
-                val listData: MutableList<MainFormListItem> = mutableListOf<MainFormListItem>()
+                val listData: MutableList<FavoriteListItem> = mutableListOf<FavoriteListItem>()
                 override fun onDataChange(snapshot: DataSnapshot) {
                     listData.clear()
 
-                    if (snapshot.exists()) {
-                        for (reportedSnapshot in snapshot.children) {
-                            val getData = reportedSnapshot.getValue(MainFormListItem::class.java)
-                            listData.add(getData!!)
+                        if (snapshot.exists()) {
+                            for (reportedSnapshot in snapshot.children) {
 
-                            mutableData.value = listData
+
+                                    var favoritelist = FavoriteListItem()
+                                    favoritelist= reportedSnapshot.getValue(FavoriteListItem::class.java)!!
+
+                                    if(favoritelist.count % 2 !=0) {
+                                        listData.add(favoritelist!!)
+                                        mutableData.value = listData
+                                    }
+                            }
                         }
                     }
-                }
 
                 override fun onCancelled(error: DatabaseError) {
                     TODO("Not yet implemented")

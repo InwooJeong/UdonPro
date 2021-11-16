@@ -4,19 +4,8 @@ package com.cookandroid.udonpro
 class UserAccount  //빈생성자 ,파이어베이스 사용할때 필수
 {
 
-    var idToken : String? = null //Firebase Uid (고유 정보 키값)
+    var idToken : String = ""
+    var eMail: String = ""
+    var password: String = ""
 
-    var eMail: String? = null
-    var password: String? = null
-    var number: String? = null
-
-
-
-    fun geteMail(): String? {
-        return eMail
-    }
-
-    fun seteMail(eMail: String?) {
-        this.eMail = eMail
-    }
 }

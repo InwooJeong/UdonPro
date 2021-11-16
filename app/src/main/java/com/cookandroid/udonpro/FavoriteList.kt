@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FavoriteList : Fragment() {
 
-    lateinit var fAdapter: MainFormListAdapter
+    lateinit var fAdapter: FavoriteListAdapter
     val viewModel by lazy { ViewModelProvider(this).get(ViewModel::class.java) }
 
     override fun onCreateView(
@@ -27,7 +27,7 @@ class FavoriteList : Fragment() {
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
 
-        fAdapter = MainFormListAdapter(requireContext())
+        fAdapter = FavoriteListAdapter(requireContext())
         recyclerView.adapter = fAdapter
 
         observerData()

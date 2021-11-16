@@ -1,10 +1,9 @@
 package com.cookandroid.udonpro
 
-import android.content.Context
+import com.google.android.datatransport.runtime.dagger.multibindings.StringKey
 
 
 data class MainFormListItem(
-    val userEmail: String = "",
     val img: String = "",
     val title: String = "",
     val uid: String="",

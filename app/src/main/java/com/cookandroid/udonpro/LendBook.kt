@@ -1,14 +1,11 @@
 package com.cookandroid.udonpro
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader
@@ -20,8 +17,6 @@ class LendBook : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lend_book)
-
-        val userEmail = intent.getStringExtra("userEmail").toString()
         val uid = intent.getStringExtra("uid").toString()
         val title = intent.getStringExtra("title").toString()
         val publish = intent.getStringExtra("publish").toString()
@@ -29,9 +24,6 @@ class LendBook : AppCompatActivity() {
         val endDate = intent.getStringExtra("endDate").toString()
         val img = intent.getStringExtra("img").toString()
 
-        Log.d("userMail",userEmail + "111111111111111" )
-
-        var intent =
 
 
 //        val chatButton = findViewById<ImageView>(R.id.chatButton)
@@ -41,9 +33,7 @@ class LendBook : AppCompatActivity() {
 
         chatButton.setOnClickListener {
             val intent = Intent(applicationContext, ChatRoomActivity::class.java)
-            intent.putExtra("uid", uid)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-
+            startActivity(intent)
         }
 
         val like_num = findViewById<TextView>(R.id.like_number)
@@ -55,7 +45,7 @@ class LendBook : AppCompatActivity() {
         val report_text = findViewById<ImageView>(R.id.report_text)
 
         // 데이터 값 받아오기
-        userid.text = userEmail
+        userid.text = uid
         Firebase.storage.reference.child("book_img/" + img).downloadUrl.addOnCompleteListener {
             if (it.isSuccessful) {
                 Glide.with(imageView9).load(it.result).into(imageView9)
@@ -87,9 +77,9 @@ class LendBook : AppCompatActivity() {
             hate_num.text = counter.toString()
         }
 
-//        report_image.setOnClickListener {
-//            Toast.makeText(this, "신고되었습니다.", Toast.LENGTH_SHORT).show()
-//        }
+        report_image.setOnClickListener {
+            Toast.makeText(this, "신고되었습니다.", Toast.LENGTH_SHORT).show()
+        }
 
         lend_button.setOnClickListener {
             Toast.makeText(this,"대여완료 되었습니다!", Toast.LENGTH_SHORT).show()
@@ -98,23 +88,7 @@ class LendBook : AppCompatActivity() {
         }
 
         report_image.setOnClickListener {
-            var builder = AlertDialog.Builder(this)
-            builder.setMessage("이 게시글을 신고하시겠습니까?")
 
-//            fun tost() {
-//                Toast.makeText(this, "신고되었습니다.", Toast.LENGTH_SHORT).show()
-//            }
-
-            var listener = object : DialogInterface.OnClickListener {
-                override fun onClick(p0: DialogInterface?, p1: Int) {
-                    when(p1) {
-                        DialogInterface.BUTTON_POSITIVE -> ""
-                    }
-                }
-            }
-            builder.setPositiveButton("예",null)
-            builder.setNegativeButton("아니요", null)
-            builder.show()
         }
 
         userid.setOnClickListener {
@@ -122,7 +96,6 @@ class LendBook : AppCompatActivity() {
             intent.putExtra("uid", uid)
             intent.putExtra("title", title)
             intent.putExtra("img", img)
-            intent.putExtra("userEmail", userEmail)
             startActivity(intent)
         }
     }
