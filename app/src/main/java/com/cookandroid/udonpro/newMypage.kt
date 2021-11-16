@@ -1,18 +1,13 @@
 package com.cookandroid.udonpro
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
-import android.widget.Toast
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 
 class newMypage: Fragment() {
@@ -43,7 +38,7 @@ class newMypage: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tv_userEmail = requireView().findViewById<EditText>(R.id.tv_userEmail) as TextView
+        val tv_userEmail = requireView().findViewById<EditText>(R.id.tv_userEmail2) as TextView
         val btn_logout = requireView().findViewById<Button>(R.id.btn_logout) as Button
 
 
@@ -52,6 +47,7 @@ class newMypage: Fragment() {
         mAuth!!.addAuthStateListener { firebaseAuth: FirebaseAuth? ->
             mAuth = FirebaseAuth.getInstance()
         }
+
         val currentUser = mAuth!!.currentUser
         userEmail = currentUser!!.email.toString()
         userUid = currentUser.uid

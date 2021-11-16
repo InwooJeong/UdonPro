@@ -39,7 +39,7 @@
         android:layout_marginBottom="70dp"
         android:elevation="20dp"
         android:src="@drawable/ic_location_on_red_12dp"
-        app:layout_constraintBottom_toTopOf="@+id/tablayout"
+        app:layout_constraintBottom_toTopOf="@+id/tablayout2"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView10"
         app:layout_constraintVertical_bias="0.0" />
@@ -56,14 +56,14 @@
         android:fontFamily="@font/cafe_24_syongsyong"
         android:gravity="center|left"
         android:text="search"
-        app:layout_constraintBottom_toTopOf="@+id/tablayout"
+        app:layout_constraintBottom_toTopOf="@+id/tablayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tablayout2"
         style="@style/Base.Widget.Design.TabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -81,9 +81,9 @@
         android:layout_width="384dp"
         android:layout_height="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tablayout"
-        app:layout_constraintStart_toStartOf="@+id/tablayout"
-        app:layout_constraintTop_toBottomOf="@+id/tablayout">
+        app:layout_constraintEnd_toEndOf="@+id/tablayout2"
+        app:layout_constraintStart_toStartOf="@+id/tablayout2"
+        app:layout_constraintTop_toBottomOf="@+id/tablayout2">
     </androidx.viewpager2.widget.ViewPager2>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,17 +5,11 @@ import android.widget.TextView
 import android.widget.Button
 import com.google.firebase.auth.FirebaseAuth
 import android.os.Bundle
-import com.cookandroid.udonpro.R
-import com.google.firebase.auth.FirebaseAuth.AuthStateListener
-import com.google.firebase.auth.FirebaseUser
-import android.content.DialogInterface
 import android.content.Intent
-import com.cookandroid.udonpro.loginform
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.mypage.*
 
 class mypage : AppCompatActivity() {
@@ -36,7 +30,7 @@ class mypage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.mypage)
-        tv_userEmail = findViewById(R.id.tv_userEmail)
+        tv_userEmail = findViewById(R.id.tv_userEmail2)
         btn_logout = findViewById(R.id.btn_logout)
         mAuth = FirebaseAuth.getInstance()
         mAuth!!.addAuthStateListener { firebaseAuth: FirebaseAuth? ->

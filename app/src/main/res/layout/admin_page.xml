@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="199dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:gravity="center"
+        android:text="관리자"
+        android:textSize="46dp"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <Button
+        android:id="@+id/btn_goBoard"
+        android:layout_width="280dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#de85bdfe"
+        android:text="공지사항"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <Button
+        android:id="@+id/btn_bookList"
+        android:layout_width="280dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#de85bdfe"
+        android:text="신고 목록"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="280dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#de85bdfe"
+        android:text="회원 목록"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
