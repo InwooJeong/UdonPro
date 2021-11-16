@@ -4,32 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import android.widget.EditText
-import android.widget.Button
 import android.os.Bundle
 import android.view.View
-import com.cookandroid.udonpro.R
+import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseUser
-import com.cookandroid.udonpro.UserAccount
-import android.widget.Toast
-import com.google.firebase.firestore.auth.User
+import kotlinx.android.synthetic.main.registerform.*
 
 class register : AppCompatActivity() {
     lateinit var mFirebaseAuth : FirebaseAuth //파이어베이스 인증처리
-
-
     lateinit var mDatabaseRef : DatabaseReference// 실시간 데이터베이스
-
-    lateinit var mEtEmail: EditText
-    lateinit var mEtPw: EditText
-    lateinit var mEtNumber : EditText //회원가입 입력 필드 , (주소 나중에처리할것)
-    lateinit var mBtnRegister: Button
-    lateinit var mBtnMain : Button //회원가입 입력버튼
-
-
+    val account = UserAccount()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,21 +23,21 @@ class register : AppCompatActivity() {
 
         mFirebaseAuth = FirebaseAuth.getInstance()
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("UdonProject")
-        mEtEmail = findViewById(R.id.et_email)
-        mEtPw = findViewById(R.id.et_pw)
-        mEtNumber = findViewById(R.id.et_num)
-        mBtnRegister = findViewById<Button>(R.id.btn_register)
 
 
-        mBtnRegister.setOnClickListener(View.OnClickListener {
+        var addressItem = arrayOf("사상구", "부산진구")
+        val myAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, addressItem)
+        spinner_address.adapter = myAdapter
+        spinner_address.prompt="주소를 선택하세요"
+
+        btn_register.setOnClickListener(View.OnClickListener {
+
             //회원가입 처리 시작
-            val strEmail = mEtEmail.text.toString() //값을 가저와서, 문자열로 변환
-            val strpw = mEtPw.text.toString()
-            //String inNum = mEtNumber.getText().toString();
+            val strEmail = et_email.text.toString() //값을 가저와서, 문자열로 변환
+            val strpw = et_pw.text.toString()
 
 
-            val mBtnMain = findViewById<Button>(R.id.btn_main)
-            mBtnMain.setOnClickListener {
+            btn_main.setOnClickListener {
                 intent = Intent(this@register, MainActivity::class.java)
                 startActivity(intent)
             }
@@ -66,21 +50,30 @@ class register : AppCompatActivity() {
 
                     if (task.isSuccessful) {
                         val firebaseUser = mFirebaseAuth!!.currentUser
-                        val account = UserAccount()
+
 
                         account.idToken = firebaseUser!!.uid //파이어베이스에서 가저옴 (고유)
 
                         val fireEmail = firebaseUser.email
                         account.eMail = fireEmail.toString()
 
-//                      val firePassword = firebaseUser.password
-//                        account.password = firePassword.toString()
 
-                        //account.eMail(firebaseUser.email)
                         account.password = strpw //사용자가 입력한곳에서 가저옴
-                        //account.setNumber(firebaseUser.getPhoneNumber());
+                        account.phoneNum = et_num.text.toString()
 
-                        //saveUserToFirebaseDatabase()
+                        spinner_address.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+                            override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                                when(position){
+                                    0->{}
+                                    1->{account.address="사상구"}
+                                    2->{account.address="부산진구"}
+                                }
+                            }
+
+                            override fun onNothingSelected(p0: AdapterView<*>?) {
+                                Toast.makeText(applicationContext,"주소를 선택해 주세요!", Toast.LENGTH_SHORT).show()
+                            }
+                        }
 
 
                         // setValue : database에서 insert 해준

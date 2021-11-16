@@ -53,6 +53,8 @@ class mypage : AppCompatActivity() {
                 }.show()
 
         }
+
+
     }
 
     fun onClick(view: View) {
