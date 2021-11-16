@@ -49,6 +49,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_bookList" />
 
     <Button
+        android:id="@+id/adminPage"
+        android:layout_width="280dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="55dp"
+        android:backgroundTint="#de85bdfe"
+        android:text="관리자 페이지"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
         android:id="@+id/btn_logout"
         android:layout_width="100dp"
         android:layout_height="49dp"
