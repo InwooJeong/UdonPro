@@ -63,13 +63,13 @@
         <entry key="app/src/main/res/layout/fragment_request.xml" value="0.14351851851851852" />
         <entry key="app/src/main/res/layout/lend_book.xml" value="0.335" />
         <entry key="app/src/main/res/layout/mainform.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/mainformrecyclerview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/mainformrecyclerview.xml" value="0.25" />
         <entry key="app/src/main/res/layout/member_list.xml" value="0.27546296296296297" />
         <entry key="app/src/main/res/layout/mlist_item.xml" value="0.21064814814814814" />
         <entry key="app/src/main/res/layout/mypage.xml" value="0.271689497716895" />
         <entry key="app/src/main/res/layout/registerform.xml" value="0.271689497716895" />
         <entry key="app/src/main/res/layout/reported_list.xml" value="0.21064814814814814" />
-        <entry key="app/src/main/res/layout/uploader.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/uploader.xml" value="0.25" />
       </map>
     </option>
   </component>
