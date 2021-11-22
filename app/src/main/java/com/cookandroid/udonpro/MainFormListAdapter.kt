@@ -104,6 +104,7 @@ class MainFormListAdapter(private val context: Context) :
                 intent.putExtra("startDate", item.startDate)
                 intent.putExtra("endDate", item.endDate)
                 intent.putExtra("img", item.img)
+                intent.putExtra("email", item.email)
                 context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             }
         }

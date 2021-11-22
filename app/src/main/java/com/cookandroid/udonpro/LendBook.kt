@@ -23,7 +23,7 @@ class LendBook : AppCompatActivity() {
         val startDate = intent.getStringExtra("startDate").toString()
         val endDate = intent.getStringExtra("endDate").toString()
         val img = intent.getStringExtra("img").toString()
-
+        val email = intent.getStringExtra("email").toString()
 
 
 //        val chatButton = findViewById<ImageView>(R.id.chatButton)
@@ -45,7 +45,7 @@ class LendBook : AppCompatActivity() {
         val report_text = findViewById<ImageView>(R.id.report_text)
 
         // 데이터 값 받아오기
-        userid.text = uid
+        userid.text = email
         Firebase.storage.reference.child("book_img/" + img).downloadUrl.addOnCompleteListener {
             if (it.isSuccessful) {
                 Glide.with(imageView9).load(it.result).into(imageView9)
@@ -96,6 +96,7 @@ class LendBook : AppCompatActivity() {
             intent.putExtra("uid", uid)
             intent.putExtra("title", title)
             intent.putExtra("img", img)
+            intent.putExtra("email", email)
             startActivity(intent)
         }
     }

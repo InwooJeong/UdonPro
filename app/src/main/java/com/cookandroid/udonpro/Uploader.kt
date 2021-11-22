@@ -32,7 +32,6 @@ class Uploader : AppCompatActivity() {
         setContentView(R.layout.uploader)
 
 
-
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView1)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -53,9 +52,9 @@ class Uploader : AppCompatActivity() {
         val uid = intent.getStringExtra("uid").toString()
         val title = intent.getStringExtra("title").toString()
         val img = intent.getStringExtra("img").toString()
-        //val userEmail = intent.getStringExtra("userEmail").toString()
+        val userEmail = intent.getStringExtra("email").toString()
         //데이터 값 받아오기.
-        tv_userEmail2.text = uid
+        tv_userEmail2.text = userEmail
 
         Firebase.storage.reference.child("book_img/" + img).downloadUrl.addOnCompleteListener {
             recyclerView1.layoutManager = GridLayoutManager(this,2)
@@ -71,9 +70,6 @@ class Uploader : AppCompatActivity() {
         mAdapter.notifyDataSetChanged()
         })
     }
-
-
-
 
 
 }

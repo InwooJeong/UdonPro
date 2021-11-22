@@ -1,100 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="73dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="내 정보 수정"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="@+id/userid"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:layout_marginEnd="43dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/cafe_24_syongsyong"
-        android:text="아이디"
-        app:layout_constraintBaseline_toBaselineOf="@+id/userid"
-        app:layout_constraintEnd_toStartOf="@+id/userid"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="아이디" />
 
     <EditText
         android:id="@+id/userid"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="128dp"
-        android:background="#FFFFFF"
-        android:elevation="10dp"
-        android:fontFamily="@font/cafe_24_syongsyong"
-        android:hint="ID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:enabled="false"
         android:fontFamily="@font/cafe_24_syongsyong"
-        android:text="전화번호"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        android:hint="ID" />
 
-    <EditText
-        android:id="@+id/phoneNum"
-        android:layout_width="120dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:height="20dp"
-        android:background="#FFFFFF"
-        android:elevation="10dp"
-        android:fontFamily="@font/cafe_24_syongsyong"
-        android:hint="Phone"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/userid"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/cafe_24_syongsyong"
+            android:text="전화번호" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneNum"
+            android:fontFamily="@font/cafe_24_syongsyong"
+            android:hint="Phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="58dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/cafe_24_syongsyong"
-        android:text="주소"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        android:text="주소" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="127dp"
-        android:layout_marginBottom="498dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"></Spinner>
+        android:id="@+id/spinner_upload"
+        android:layout_width="150dp"
+        android:layout_height="21dp"></Spinner>
 
+    </LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

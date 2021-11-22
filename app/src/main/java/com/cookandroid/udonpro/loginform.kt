@@ -58,5 +58,11 @@ class loginform : AppCompatActivity() {
             val intent = Intent(this@loginform, register::class.java)
             startActivity(intent)
         }
+
+        val button2 = findViewById<Button>(R.id.button2)
+        button2.setOnClickListener {
+            val intent = Intent(this@loginform, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

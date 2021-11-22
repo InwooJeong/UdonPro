@@ -9,5 +9,6 @@ data class MainFormListItem(
     val uid: String="",
     val publish: String="",
     val startDate: String="",
-    val endDate: String=""
+    val endDate: String="",
+    var email: String=""
 )

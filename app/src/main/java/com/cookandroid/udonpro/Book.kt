@@ -13,5 +13,6 @@ data class Book(
     var startDate : String ="",
     var endDate : String ="",
     var uid: String="",
-    var bookType: String=""
+    var bookType: String="",
+    var email: String=""
 )

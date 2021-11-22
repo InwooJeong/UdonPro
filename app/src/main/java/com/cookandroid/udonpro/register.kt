@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import android.os.Bundle
+import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.View
 import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
@@ -30,17 +31,19 @@ class register : AppCompatActivity() {
         spinner_address.adapter = myAdapter
         spinner_address.prompt="주소를 선택하세요"
 
+        et_num.addTextChangedListener(PhoneNumberFormattingTextWatcher())
+
+        btn_main.setOnClickListener {
+            intent = Intent(this@register, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
         btn_register.setOnClickListener(View.OnClickListener {
 
             //회원가입 처리 시작
             val strEmail = et_email.text.toString() //값을 가저와서, 문자열로 변환
             val strpw = et_pw.text.toString()
-
-
-            btn_main.setOnClickListener {
-                intent = Intent(this@register, MainActivity::class.java)
-                startActivity(intent)
-            }
 
 
             //firebaseAutho 진행

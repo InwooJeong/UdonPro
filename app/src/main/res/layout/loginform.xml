@@ -45,67 +45,65 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/et_pwd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-
     <EditText
         android:id="@+id/et_pwd"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/edittext_shadow"
         android:ems="10"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:hint="PASSWORD"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_email1"
         app:layout_constraintTop_toBottomOf="@+id/et_email1" />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="#eeb600"
         android:fontFamily="@font/cafe_24_syongsyong"
         android:text="로그인"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pwd" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="46dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/cafe_24_syongsyong"
-
-        android:text="둘러보기"
-        android:textColor="@color/purple_200"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
-
-    <Button
         android:id="@+id/btn_regi"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="100dp"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/cafe_24_syongsyong"
 
         android:text="회원가입"
         android:textColor="@color/purple_200"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+
+        android:fontFamily="@font/cafe_24_syongsyong"
+        android:text="둘러보기"
+        android:textColor="@color/purple_200"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
 
