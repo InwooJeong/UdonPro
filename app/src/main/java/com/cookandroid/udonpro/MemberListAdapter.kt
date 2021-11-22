@@ -51,7 +51,7 @@ class MemberListAdapter(private val context: Context):
         }*/
 
         fun bind(item: MemberListItem){
-            mlist_memberid.text = item.id
+            mlist_memberid.text = item.email
             //Glide.with(itemView).load(item.profile).into(mlist_profile)
             Firebase.storage.reference.child("member_img/"+item.profile).downloadUrl.addOnCompleteListener{
                 if(it.isSuccessful){
