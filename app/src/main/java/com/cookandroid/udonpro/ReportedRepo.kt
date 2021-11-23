@@ -15,7 +15,7 @@ class ReportedRepo {
     fun getData(): LiveData<MutableList<ReportedListItem>>{
         val mutableData = MutableLiveData<MutableList<ReportedListItem>>()
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("book")
+        val myRef = database.getReference("book").orderByChild("reported").startAt(3.0)
 
 
             myRef.addValueEventListener(object : ValueEventListener {
